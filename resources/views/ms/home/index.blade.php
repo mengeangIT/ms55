@@ -49,7 +49,7 @@
                                             </div>
                                             <div class=" col-md-4 col-sm-4 col-xs-12 hidden-xs-down">
                                                 <a href="{{url('/branch')}}">
-                                                    <img class="img-responsive" style="height: 119px; width: 239.44px;" src="{{ asset('/uploads/'.\App\Helpers\ITPC::get_basename(\App\Helpers\ITPC::getSettingKey('map-home-picture',$getSetting))) }}" alt=" " />
+                                                    <img class="img-responsive" style="height: 119px; width: 239.44px;" src="{{ asset('/uploads/home/'.\App\Helpers\ITPC::get_basename(\App\Helpers\ITPC::getSettingKey('map-home-picture',$getSetting))) }}" alt=" " />
 
                                                     <div class="radial-shadow"></div>
                                                 </a>

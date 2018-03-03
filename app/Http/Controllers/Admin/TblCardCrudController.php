@@ -78,7 +78,7 @@ class TblCardCrudController extends CrudController
             'tab' => 'Image',
             'upload' => true,
             'crop' => true, // set to true to allow cropping, false to disable
-            'aspect_ratio' => 213/195, // ommit or set to 0 to allow any aspect ratio
+            'aspect_ratio' => 293 / 192, // ommit or set to 0 to allow any aspect ratio
             // 'prefix' => 'uploads/images/profile_pictures/' // in case you only store the filename in the database, this text will be prepended to the database value
         ]);
 

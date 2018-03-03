@@ -15,8 +15,8 @@ return [
 
     'pro_cate' => 'pro_cate',
     'pro_type' => 'pro_type',
-    'pro_code' => 'pro_des_en',
-    'pro_des_en' => 'name',
+    'pro_code' => 'pro_code',
+    'pro_des_en' => 'pro_des_en',
     'pro_des_kh' => 'pro_des_kh',
     'qty' => 'qty',
     'price' => 'price',

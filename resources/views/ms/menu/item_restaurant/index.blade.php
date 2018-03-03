@@ -1,4 +1,3 @@
-
     <div class="row textSubHeader m-b-0">
         <div class="col-xs-6 pull-right">
             <div class="paginationBox  paginationBoxTop">
@@ -18,15 +17,11 @@
                 <div id="roastduck_render">
                     <div class="row">
                         @foreach($items as $item)
-                            @php
-                                $imds = json_decode($item->image,true);
-                                $img = count($imds)>0?$imds[0]:'';
-                            @endphp
                             <div class="healthymenuProductBox col-md-3 col-lg-3 col-xs-6">
                                 <div class="productListHMBox">
                                     <a href="#xxitemxx-{{ $item->id }}"
                                        data-toggle="modal">
-                                            <img src="{{ url('img/cache/img300x300/'.\App\Helpers\Glb::get_basename($img)) }}" width="100%">
+                                            <img src="{{ url('img/cache/img300x300/'.\App\Helpers\ITPC::get_basename($item->image)) }}" width="100%">
                                     </a>
                                 </div>
 
@@ -34,12 +29,9 @@
                                     <a href="#xxitemxx-{{ $item->id }}"
                                        data-toggle="modal">
 
-                                        @if(get_ses_lang() == 'km')
-                                            <h4>{{$item->title_km}}</h4>
-                                        @endif
-                                        @if(get_ses_lang() == 'en')
-                                            <h4>{{$item->title}}</h4>
-                                        @endif
+
+                                            <h4>{{$item->pro_des_en}}</h4>
+
                                     </a>
                                     <p><a class="readmore"
                                           href="#xxitemxx-{{ $item->id }}"
@@ -66,17 +58,14 @@
                                                 </button>
                                                 <p class="img imgMenuPopup">
 
-                                                        <img data-src="{{ url('img/cache/img300x300/'.\App\Helpers\Glb::get_basename($img)) }}"
+                                                        <img data-src="{{ url('img/cache/img300x300/'.\App\Helpers\ITPC::get_basename($item->image)) }}"
                                                              class="lazyloaded my-reload-img-rest">
 
                                                 </p>
 
-                                                @if(get_ses_lang() == 'km')
-                                                    <h3>{{$item->title_km}}</h3>
-                                                @endif
-                                                @if(get_ses_lang() == 'en')
-                                                    <h3>{{$item->title}}</h3>
-                                                @endif
+
+                                                    <h3>{{$item->pro_des_en}}</h3>
+
                                                 <p class="">{{$item->description}} </p>
                                                 <p class="">
                                                     Kalory: {{$item->kalory}}

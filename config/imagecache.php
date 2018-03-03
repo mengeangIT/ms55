@@ -63,6 +63,7 @@ return array(
         'medium' => 'Intervention\Image\Templates\Medium',
         'large' => 'Intervention\Image\Templates\Large',
         'image940x350' => 'App\Filters\Image940x350',
+        'img300x300' => 'App\Filters\Image300x300',
     ),
 
     /*

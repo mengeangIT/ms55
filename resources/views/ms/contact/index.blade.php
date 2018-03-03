@@ -1,5 +1,6 @@
 <?php
 $getSetting = \App\Helpers\ITPC::getSetting();
+$lang_file = 'ms_contact';
 ?>
 @extends('ms.layout.front')
 @section('title', 'AboutPage')
@@ -20,14 +21,14 @@ $getSetting = \App\Helpers\ITPC::getSetting();
                             <div class="col-xs-12">
                                 <div class="breadcrumbList">
                                     <ul class="breadcrumb">
-                                        <li><a href="{{url('/')}}">{{_t('Home')}}</a></li>
-                                        <li class="active">{{_t('Contact')}}</li>
+                                        <li><a href="{{url('/')}}">{{_t('home',$lang_file)}}</a></li>
+                                        <li class="active">{{_t('contact',$lang_file)}}</li>
                                     </ul>
                                 </div>
                                 <div class="titleText">
                                     <div class="textHeaderNoImg">
                                         <div class="linegray">
-                                            <h2>{{_t('Contact Us')}}</h2>
+                                            <h2>{{_t('contact',$lang_file)}}</h2>
                                         </div>
                                         <div class="redbox"></div>
                                     </div>
@@ -36,7 +37,7 @@ $getSetting = \App\Helpers\ITPC::getSetting();
                         </div>
 
                         <div class="row hidden-lg-up">
-                            <h1 class="textHeaderMobile">{{_t('Contact Us')}}</h1>
+                            <h1 class="textHeaderMobile">{{_t('contact',$lang_file)}}</h1>
                         </div>
 
                     <div class="row">
@@ -45,9 +46,9 @@ $getSetting = \App\Helpers\ITPC::getSetting();
                             <div class="col-xs-2 hidden-md-down">
                                 <div class="sidebarSubMenu">
                                     <ul class="nav">
-                                        <li><a class="historySidebarM" href="{{url('/about')}}">{{_t('MS History')}}</a></li>
-                                        <li class="active"><a class="contactSidebatM" href="{{url('/contact')}}">{{_t('Contact')}}</a>
-                                        <li><a class="careerSidebarM" href="{{url('/career')}}">{{_t('Career')}}</a></li>
+                                        <li><a class="historySidebarM" href="{{url('/about')}}">{{_t('history',$lang_file)}}</a></li>
+                                        <li class="active"><a class="contactSidebatM" href="{{url('/contact')}}">{{_t('contact',$lang_file)}}</a>
+                                        <li><a class="careerSidebarM" href="{{url('/career')}}">{{_t('career',$lang_file)}}</a></li>
                                         </li>
                                     </ul>
                                 </div>
@@ -76,9 +77,9 @@ $getSetting = \App\Helpers\ITPC::getSetting();
                                         <div class="dateBox">
                                             <div class="col-xs-12 p-r-0" style="word-wrap: break-word;padding-left: 40px;">
                                                 <div class="iconDate iconContact"><img src="{{URL::asset('ms/img/responsive/about/clock-red.png')}}" style="width: 36px; height: 34px;">&nbsp;</div>
-                                                <span class="titledate">{{_t('DATE')}}</span>
+                                                <span class="titledate">{{_t('date',$lang_file)}}</span>
 
-                                                <p class="desdate">{{_t('Mon - Sat 08:00 - 17:00')}}</p>
+                                                <p class="desdate">{{_t('mon_-_sat_08:00_-_17:00',$lang_file)}}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -87,9 +88,9 @@ $getSetting = \App\Helpers\ITPC::getSetting();
                                         <div class="phoneBox">
                                             <div class="col-xs-12 p-r-0" style="word-wrap: break-word;padding-left: 40px;">
                                                 <div class="iconPhone iconContact"><img src="{{URL::asset('ms/img/responsive/about/phone.png')}}" style="width: 36px; height: 34px;">&nbsp;</div>
-                                                <span class="titlephone">{{_t('PHONE')}}</span>
+                                                <span class="titlephone">{{_t('phone',$lang_file)}}</span>
 
-                                                <p class="desphone"><a href="tel:081-288-882">{{_t('081-288-882')}}</a></p>
+                                                <p class="desphone"><a href="tel:081-288-882">{{_t('081288882',$lang_file)}}</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -98,7 +99,7 @@ $getSetting = \App\Helpers\ITPC::getSetting();
                                         <div class="emailBox">
                                             <div class="col-xs-12 p-r-0" style="word-wrap: break-word;padding-left: 55px;">
                                                 <div class="iconEmail iconContact">&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{URL::asset('ms/img/responsive/about/letter.png')}}" style="width: 36px; height: 34px;">&nbsp;</div>
-                                                <span class="titleemail">{{_t('E-MAIL')}}</span>
+                                                <span class="titleemail">{{_t('e-mail',$lang_file)}}</span>
                                                 <br>
                                                 <a href="mailTo:info@mastersukisoup.com">info@mastersukisoup.com</a>
                                             </div>
@@ -121,50 +122,50 @@ $getSetting = \App\Helpers\ITPC::getSetting();
                                     <form id="contactform" action="{{url('/post/contact')}}" method="POST" enctype="multipart/form-data">
                                         {{csrf_field()}}
                                         <div class="textsubHeader3">
-                                            <h3>{{_t('Contact Form')}}</h3>
-                                            <p>{{_t('Fill the form to contact MS Restaurant Group PCL')}}</p>
+                                            <h3>{{_t('contact_form',$lang_file)}}</h3>
+                                            <p>{{_t('fill_the_form_to_contact_ms_restaurant-group_pcl',$lang_file)}}</p>
                                             <div class="sgraybox"></div>
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-sm-6 col-xs-12">
                                                 <label class="hidden-xs-down" for="inputFullname">
-                                                    {{_t('Name - Surname')}} <span class="fontorange">*</span>
+                                                    {{_t('name-surname',$lang_file)}} <span class="fontorange">*</span>
                                                 </label>
                                                 <input type="text" name="name" class="form-control" id="inputFullname"
-                                                       placeholder="{{_t('Name - Surname')}} *" required>
+                                                       placeholder="{{_t('name_-_surname',$lang_file)}} *" required>
                                             </div>
                                             <div class="form-group col-sm-6 col-xs-12">
                                                 <label class="hidden-xs-down" for="inputEmail">
-                                                    {{_t('Email')}} <span class="fontorange">*</span>
+                                                    {{_t('e-mail',$lang_file)}} <span class="fontorange">*</span>
                                                 </label>
                                                 <input type="email" name="email" class="form-control" id="inputEmail"
-                                                       placeholder="{{_t('Email')}} *" required>
+                                                       placeholder="{{_t('e-mail',$lang_file)}} *" required>
                                             </div>
                                             <div class="form-group col-sm-6 col-xs-12">
                                                 <label class="hidden-xs-down" for="inputPhone">
-                                                    {{_t('Tel')}}. <span class="fontorange">*</span>
+                                                    {{_t('tel',$lang_file)}}<span class="fontorange">*</span>
                                                 </label>
                                                 <input type="text" name="phone" class="form-control" maxlength="10" id="inputPhone"
-                                                       placeholder="{{_t('Tel')}}. *" required max="10">
+                                                       placeholder="{{_t('tel',$lang_file)}}" required max="10">
                                             </div>
                                             <div class="form-group col-sm-6 col-xs-12">
                                                 <label class="hidden-xs-down" for="inputSubject">
-                                                    {{_t('Subject')}} <span class="fontorange">*</span>
+                                                    {{_t('subject',$lang_file)}} <span class="fontorange">*</span>
                                                 </label>
                                                 <input type="text" name="subject" class="form-control" id="inputSubject"
-                                                       placeholder="{{_t('Subject')}} *" required>
+                                                       placeholder="{{_t('subject',$lang_file)}}" required>
                                             </div>
                                             <div class="form-group col-xs-12">
                                                 <label class="hidden-xs-down" for="inputDetail">
-                                                    {{_t('Detail')}} <span class="fontorange">*</span>
+                                                    {{_t('detail',$lang_file)}} <span class="fontorange">*</span>
                                                 </label>
                                                 <textarea class="form-control" name="detail" id="inputDetail"
-                                                          placeholder="{{_t('Detail')}} *" required></textarea>
+                                                          placeholder="{{_t('detail',$lang_file)}}" required></textarea>
                                             </div>
 
                                             <div class="clearfix"></div>
                                             <div class="form-group col-xs-12">
-                                                <button type="submit" class="btnRedResponsiveMedium">{{_t('Submit')}}</button>
+                                                <button type="submit" class="btnRedResponsiveMedium">{{_t('submit',$lang_file)}}</button>
                                             </div>
                                         </div>
                                     </form>

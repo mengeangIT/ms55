@@ -100,7 +100,8 @@ class TblProductCrudController extends CrudController
                 'class' => 'form-group col-md-6'
             ],
             'attributes' => [
-                'class' => 'form-control'
+                'class' => 'form-control',
+                'number' => 'number'
             ],
         ]);
         $this->crud->addField([
@@ -111,10 +112,33 @@ class TblProductCrudController extends CrudController
                 'class' => 'form-group col-md-6'
             ],
             'attributes' => [
+                'class' => 'form-control',
+                'number' => 'number'
+            ],
+        ]);
+        $this->crud->addField([
+            'name' => 'kalory',
+            'label' => _t('kalory',$lang_file),
+            'type' => 'text',
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-6'
+            ],
+            'attributes' => [
+                'class' => 'form-control',
+                'number' => 'number'
+            ],
+        ]);
+        $this->crud->addField([
+            'name' => 'description',
+            'label' => _t('description',$lang_file),
+            'type' => 'textarea',
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-12'
+            ],
+            'attributes' => [
                 'class' => 'form-control'
             ],
         ]);
-
 
         $this->crud->addField([ // image
             'label' => _t('image',$lang_file),
@@ -124,7 +148,7 @@ class TblProductCrudController extends CrudController
             'tab' => 'Image',
             'upload' => true,
             'crop' => true, // set to true to allow cropping, false to disable
-            'aspect_ratio' => 213/195, // ommit or set to 0 to allow any aspect ratio
+            'aspect_ratio' => 240/220, // ommit or set to 0 to allow any aspect ratio
             // 'prefix' => 'uploads/images/profile_pictures/' // in case you only store the filename in the database, this text will be prepended to the database value
         ]);
 
@@ -196,6 +220,10 @@ class TblProductCrudController extends CrudController
         $this->crud->addColumn([
             'name' => 'price',
             'label' => _t('price',$lang_file),
+        ]);
+        $this->crud->addColumn([
+            'name' => 'kalory',
+            'label' => _t('kalory',$lang_file),
         ]);
         $this->crud->addColumn([
             'name' => 'image',

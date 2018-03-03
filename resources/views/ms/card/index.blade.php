@@ -16,7 +16,7 @@
             <?php
             function select1($card_category_id)
             {
-                return 'SELECT * FROM cards WHERE cards.status = "ACTIVE"  AND  cards.card_category_id = ' . $card_category_id;
+                return 'SELECT * FROM tbl_cards WHERE tbl_cards.status = "ACTIVE"  AND  tbl_cards.card_cate = ' . $card_category_id;
             }
             $i = 1;
             ?>
@@ -94,16 +94,10 @@
                                                                                  class="img-responsive img-center"/>
 
                                                                     </a>
-                                                                    @if(get_ses_lang() == 'km')
+
                                                                         <a class="cardTitleCol"
                                                                            href="{{url('/card/detail/'.$card->id)}}">
-                                                                            {{$card->title_km}} </a>
-                                                                    @endif
-                                                                    @if(get_ses_lang() == 'en')
-                                                                        <a class="cardTitleCol"
-                                                                           href="{{url('/card/detail/'.$card->id)}}">
-                                                                            {{$card->title_en}} </a>
-                                                                    @endif
+                                                                            {{$card->card_des_en}} </a>
 
 
                                                                 </div>

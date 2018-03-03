@@ -19,7 +19,7 @@ class TblPostJob extends Model
      protected $primaryKey = 'id';
      public $timestamps = true;
     // protected $guarded = ['id'];
-    protected $fillable = ['position_id','name','salary','start_work','email','phone','resume','national_id'];
+    protected $fillable = ['position_id','content','post_date','in_putter','status'];
     // protected $hidden = [];
     // protected $dates = [];
 

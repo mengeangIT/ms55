@@ -1,3 +1,4 @@
+
 <div class="container hidden-md-up p-t">
     <div class="row">
         <form action="{{url('menu/delivery')}}" method="get">
@@ -22,7 +23,7 @@
     <div class="nav-product-wrapper hidden-md-up m-t top-menu-delivery-toggle">
         <div class="cat-click-change nav-product-menu-responsive hidden-md-up">
             <i class="fa fa-play"></i>
-            <img src="{{ $image == ''?$img_pro:url('img/cache/img300x300/'.\App\Helpers\Glb::get_basename($image)) }}" alt=""
+            <img src="{{ $image == ''?$img_pro:url('img/cache/img300x300/'.\App\Helpers\ITPC::get_basename($image)) }}" alt=""
                  class="img-category-delivery-list"
                  style="height: 30px;margin-top:-7px">
             <span class="title-category-delivery-list"
@@ -57,16 +58,12 @@
         </li>
 
         @foreach($itemCategories as $itemCategory)
-            @php
-                $imds = json_decode($itemCategory->image,true);
-                $img = count($imds)>0?$imds[0]:'';
-            @endphp
             <li class=" col-xs-4 p-a-0 vegetable nav-item {{ $loop->first && $keyword?'my-keyword':'' }} img-category-delivery-list-click category{{ $itemCategory->id }}">
                 <a style="line-height: 14px;bottom:-6px !important" data-imgname="vegetable.png"
                    class="nav-link category{{ $itemCategory->id }}"
                    href="#category{{ $itemCategory->id }}-mobile"
                    role="tab" data-toggle="tab">
-                        <img src="{{ url('img/cache/img300x300/'.\App\Helpers\Glb::get_basename($img)) }}"
+                        <img src="{{ url('img/cache/img300x300/'.\App\Helpers\ITPC::get_basename($itemCategory->image)) }}"
                              alt="{{$itemCategory->title}}"
                              class="img-responsive img-center">
                     <span class="title-category-delivery-list-click">{{$itemCategory->title}}</span>
@@ -85,7 +82,7 @@
             <div class="tab-content">
 
             <?php
-                $cateItemss = \App\Models\Item::where('status', '=','ACTIVE')
+                $cateItemss = \App\Models\TblProduct::where('status', '=','ACTIVE')
                     ->where('pro_status','=','ACTIVE')
                     ->get();
             ?>
@@ -93,16 +90,12 @@
                 <div class="row masonry-grid">
                     @foreach ( collect($cateItemss)->chunk(2) as $chunk)
                         @foreach($chunk as $item)
-                            @php
-                                $imds = json_decode($item->image,true);
-                                $img = count($imds)>0?$imds[0]:'';
-                            @endphp
                             <div class="col-xs-6 col-sm-4 col-md-3 product-list-responsive text-center masonry-item"
                                  data-page="1">
                                 <div class="div-product-img">
-                                    <img class="product-img" src="{{ url('img/cache/img300x300/'.\App\Helpers\Glb::get_basename($img)) }}" alt=" ">
+                                    <img class="product-img" src="{{ url('img/cache/img300x300/'.\App\Helpers\ITPC::get_basename($item->image)) }}" alt=" ">
                                 </div>
-                                <p class="m-a-0 kcal-detail">{{$item->title}}</p>
+                                <p class="m-a-0 kcal-detail">{{$item->pro_des_en}}</p>
 
                                 <hr>
                                 <p class="m-a-0">
@@ -113,8 +106,8 @@
                                 <div class="clearfix"></div>
                                 <a href="#" data-id="{{$item->id}}"
                                    data-price="{{$item->price}}"
-                                   data-name="{{$item->title}}"
-                                   data-image="{{ url('img/cache/img300x300/'.\App\Helpers\Glb::get_basename($img)) }}"
+                                   data-name="{{$item->pro_des_en}}"
+                                   data-image="{{ url('img/cache/img300x300/'.\App\Helpers\ITPC::get_basename($item->image)) }}"
                                    class="btnAddtoCartResponsive text-center m-t desktop-addCart">Add
                                     to cart <img
                                             src="{{URL::asset('/ms/')}}/img/responsive/arrow-right.png"
@@ -131,25 +124,21 @@
             @foreach($itemCategories as $itemCategory)
                 <?php
                     if($keyword){
-                        $cateItemss = \App\Models\Item::where('status', '=','ACTIVE')->where('title','like','%'.$keyword.'%')->get();
+                        $cateItemss = \App\Models\TblProduct::where('status', '=','ACTIVE')->where('pro_des_en','like','%'.$keyword.'%')->get();
                     }else{
-                        $cateItemss = \App\Models\Item::where('status', '=','ACTIVE')->where('category_id',$itemCategory->id-0)->get();
+                        $cateItemss = \App\Models\TblProduct::where('status', '=','ACTIVE')->where('pro_cate',$itemCategory->id-0)->get();
                     }
                 ?>
                 <div role="tabpanel" class="fade tab-pane" id="category{{ $itemCategory->id }}-mobile">
                     <div class="row masonry-grid">
                         @foreach ( collect($cateItemss)->chunk(2) as $chunk)
                             @foreach($chunk as $item)
-                                @php
-                                    $imds = json_decode($item->image,true);
-                                    $img = count($imds)>0?$imds[0]:'';
-                                @endphp
                                 <div class="col-xs-6 col-sm-4 col-md-3 product-list-responsive text-center masonry-item"
                                      data-page="1">
                                     <div class="div-product-img">
-                                        <img class="product-img" src="{{ url('img/cache/img300x300/'.\App\Helpers\Glb::get_basename($img)) }}" alt="">
+                                        <img class="product-img" src="{{ url('img/cache/img300x300/'.\App\Helpers\ITPC::get_basename(($item->image)) }}" alt="">
                                     </div>
-                                    <p class="m-a-0 kcal-detail">{{$item->title}}</p>
+                                    <p class="m-a-0 kcal-detail">{{$item->pro_des_en}}</p>
                                     <hr>
                                     <p class="m-a-0">
                                         <span class="pull-left">{{$item->kalory}} kcal.</span>
@@ -158,8 +147,8 @@
                                     <div class="clearfix"></div>
                                     <a href="#" data-id="{{$item->id}}"
                                        data-price="{{$item->price}}"
-                                       data-name="{{$item->title}}"
-                                       data-image="{{ url('img/cache/img300x300/'.\App\Helpers\Glb::get_basename($img)) }}"
+                                       data-name="{{$item->pro_des_en}}"
+                                       data-image="{{ url('img/cache/img300x300/'.\App\Helpers\ITPC::get_basename(($item->image)) }}"
                                        class="btnAddtoCartResponsive text-center m-t desktop-addCart">Add
                                         to cart <img
                                                 src="{{URL::asset('/ms/')}}/img/responsive/arrow-right.png"

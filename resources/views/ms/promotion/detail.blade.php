@@ -1,3 +1,6 @@
+<?php
+$lang_file = 'ms_promotion';
+?>
 @extends('ms.layout.front')
 @section('title', 'PromotionPage')
 @section('url'){{url('/promotion/detail')}}@endsection
@@ -16,14 +19,14 @@
                             <div class="col-xs-12">
                                 <div class="breadcrumbList">
                                     <ul class="breadcrumb">
-                                        <li><a href="{{url('/')}}">Home</a></li>
-                                        <li class="active">{{_t('Promotion Detail')}}</li>
+                                        <li><a href="{{url('/')}}">{{_t('home',$lang_file)}}</a></li>
+                                        <li class="active">{{_t('promotion_detail',$lang_file)}}</li>
                                     </ul>
                                 </div>
                                 <div class="titleText">
                                     <div class="textHeaderNoImg">
                                         <div class="linegray">
-                                            <h2>{{_t('Promotion Detail')}}</h2>
+                                            <h2>{{_t('promotion_detail',$lang_file)}}</h2>
                                         </div>
                                         <div class="redbox"></div>
                                     </div>
@@ -31,7 +34,7 @@
                             </div>
                         </div>
                         <div class="row hidden-lg-up">
-                            <h1 class="textHeaderMobile">{{_t('Promotion Detail')}}</h1>
+                            <h1 class="textHeaderMobile">{{_t('promotion_detail',$lang_file)}}</h1>
                         </div>
                         <div class="slideBannerPromotion">
 
@@ -41,12 +44,9 @@
                         </div>
                         <div class="promotionDescription m-t">
                             <div class="textHeaderDes">
-                                {{--@if(get_ses_lang() == 'km')--}}
-                                    {{--<h3 style="font-size: 24px;">{{$promotion->title_km}}</h3>--}}
-                                {{--@endif--}}
-                                {{--@if(get_ses_lang() == 'en')--}}
-                                    {{--<h3 style="font-size: 24px;">{{$promotion->title_en}}</h3>--}}
-                                {{--@endif--}}
+
+                                    <h3 style="font-size: 24px;">{{$promotion->promotion_des_en}}</h3>
+
                                 <div class="graybox"></div>
                             </div>
                             <div class="promotionDetail">

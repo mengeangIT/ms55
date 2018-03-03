@@ -19,7 +19,7 @@ class TblApplyJob extends Model
      protected $primaryKey = 'id';
      public $timestamps = true;
     // protected $guarded = ['id'];
-    protected $fillable = ['position_des_en','position_des_kh','in_putter','status'];
+    protected $fillable = ['position_id','name','salary','start_work','email','phone','resume','national_id'];
     // protected $hidden = [];
     // protected $dates = [];
 

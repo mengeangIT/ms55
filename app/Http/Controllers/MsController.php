@@ -22,9 +22,10 @@ class MsController extends Controller
 
     function menuRestaurant(Request $request,$select = null)
     {
+        $lang_file = 'ms_menu';
         $keyword = $request->input('keyword');
         $itemCategories = TblCategory::where('status', '=','ACTIVE')->get();
-        $categoryName = _t('Vegetable and Mushroom');
+        $categoryName = _t('vegetable_and_mushroom',$lang_file);
         $image = '';
         if ($keyword) {
             $categoryName = $keyword;
@@ -32,7 +33,7 @@ class MsController extends Controller
         } else {
             foreach ($itemCategories as $row) {
                 if ($row->id - 0 == $select - 0) {
-                    $categoryName = $row->title;
+                    $categoryName = $row->cat_des_en;
                     $image_a = $row->image;
                     if ($image_a > 0) $image = $image_a[0];
                 }
@@ -42,13 +43,14 @@ class MsController extends Controller
     }
 
     function itemRestaurant(Request $request){
+
         $category_id = $request->id - 0;
         $prom = $request->prom - 0;
         $_items = TblProduct::orderBy('id', 'desc')->where('status', '=','ACTIVE');
         if ($category_id > 0) {
-            $_items->where('category_id', $category_id);
+            $_items->where('pro_cate', $category_id);
         } else {
-            $_items->where('pro_status', '=','ACTIVE');
+            $_items->where('status', '=','ACTIVE');
         }
         $items = $_items->paginate(20);
         $items->appends('id', $category_id);
@@ -57,9 +59,10 @@ class MsController extends Controller
 
     function menuDelivery(Request $request, $select = null)
     {
+        $lang_file = 'ms_menu';
         $keyword = $request->input('keyword');
         $itemCategories = TblCategory::where('status', '=','ACTIVE')->get();
-        $categoryName = _t('Promotion');
+        $categoryName = _t('promotion',$lang_file);
         $image = '';
         if ($keyword) {
             $categoryName = $keyword;
@@ -67,7 +70,7 @@ class MsController extends Controller
         } else {
             foreach ($itemCategories as $row) {
                 if ($row->id - 0 == $select - 0) {
-                    $categoryName = $row->title;
+                    $categoryName = $row->cat_des_en;
                     $image_a = $row->image;
                     if ($image_a > 0) $image = $image_a[0];
                 }
@@ -81,9 +84,9 @@ class MsController extends Controller
         $prom = $request->prom - 0;
         $_items = TblProduct::orderBy('id', 'desc')->where('status', '=','ACTIVE');
         if ($category_id > 0) {
-            $_items->where('category_id', $category_id);
+            $_items->where('pro_cate', $category_id);
         } else {
-            $_items->where('pro_status', '=','ACTIVE');
+            $_items->where('pro_promotion', '=','ACTIVE');
         }
         $items = $_items->paginate(20);
         $items->appends('id', $category_id);
@@ -110,7 +113,7 @@ class MsController extends Controller
 
     function career($select = null){
         $careers = TblPostJob::where('status','ACTIVE')
-            ->paginate(2);
+            ->paginate(5);
         return view('ms.career.index',['careers'=>$careers, 'select' => $select,'select1'=>'MS Career']);
     }
 

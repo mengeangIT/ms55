@@ -1,3 +1,6 @@
+<?php
+$lang_file = 'ms_menu';
+?>
 @extends('ms.layout.front')
 @section('title', 'MenuRestaurantPage')
 @section('url'){{url('/menu/restaurant')}}@endsection
@@ -16,8 +19,8 @@
                         <div class="col-xs-12">
                             <div class="breadcrumbList">
                                 <ul class="breadcrumb">
-                                    <li><a href="#">{{_t('Home')}}</a></li>
-                                    <li><a href="javascript:">{{_t('Healthy Menu')}}</a></li>
+                                    <li><a href="#">{{_t('home',$lang_file)}}</a></li>
+                                    <li><a href="javascript:">{{_t('menu',$lang_file)}}</a></li>
                                      <li id="breadcrumb-last-title">{{$categoryName}}</li>
                                 </ul>
                             </div>
@@ -26,7 +29,7 @@
                                     <div class="">
                                         <div class="textHeader">
                                             <div class="linegray">
-                                                <p style="font-family: 'Hanuman','Roboto', serif;  font-size: 1.4rem;  color: #02c477;">{{_t('Healthy Menu')}}</p>
+                                                <p style="font-family: 'Hanuman','Roboto', serif;  font-size: 1.4rem;  color: #02c477;">{{_t('menu',$lang_file)}}</p>
                                                 <div class="clearfix"></div>
                                             </div>
                                             <div class="redbox"></div>
@@ -51,14 +54,14 @@
                                 <li class="active text-center">
                                     <a href="{{url('/menu/restaurant')}}">
                                         <h6>
-                                            <strong>At Restaurant</strong>
+                                            <strong>{{_t('at_restaurant',$lang_file)}}</strong>
                                         </h6>
                                     </a>
                                 </li>
                                 <li class="text-center">
                                     <a href="{{url('/menu/delivery')}}">
                                         <h6>
-                                            <strong>Online Delivery</strong>
+                                            <strong>{{_t('online_delivery',$lang_file)}}</strong>
                                         </h6>
                                     </a>
                                 </li>

@@ -5,20 +5,13 @@
         </a>
         <div>
             @foreach($card_categories as $card_category)
-                @if(get_ses_lang() == 'km')
+
                     <a style="display: none;" data-id="{{$card_category->id}}" class="toggle-mobile-card card{{$card_category->id}} title-card-list-click my-activemenu-card-m"
                        href="#card{{$card_category->id}}">
 
-                        <span>{{_t('MS')}} &nbsp;</span> {{$card_category->title_km}}
+                        <span>{{_t('MS')}} &nbsp;</span> {{$card_category->card_cat_des_en}}
                     </a>
-                @endif
-                @if(get_ses_lang() == 'en')
-                    <a style="display: none;" data-id="{{$card_category->id}}" class="toggle-mobile-card card{{$card_category->id}} title-card-list-click my-activemenu-card-m"
-                       href="#card{{$card_category->id}}">
 
-                        <span>{{_t('MS')}} &nbsp;</span> {{$card_category->title_en}}
-                    </a>
-                @endif
             @endforeach
         </div>
     </li>

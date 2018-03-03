@@ -466,7 +466,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a href="{{url('/concept')}}" class="investorFooter nav-link"><h4>{{ _t('master_concept',$lang_file) }}</h4></a>
+                                <a href="{{url('/concept')}}" class="investorFooter nav-link"><h4>{{ _t('concept',$lang_file) }}</h4></a>
                                 <ul class="nav">
                                     <li><a href="{{url('/concept')}}">- {{ _t('we_care_about_your_health',$lang_file) }}</a></li>
                                     <li><a href="{{url('/concept')}}">- {{ _t('excellent_source_of_protein',$lang_file) }}</a></li>

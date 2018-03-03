@@ -11,7 +11,7 @@
  Target Server Version : 100130
  File Encoding         : 65001
 
- Date: 02/03/2018 17:22:52
+ Date: 03/03/2018 17:11:51
 */
 
 SET NAMES utf8mb4;
@@ -108,13 +108,6 @@ CREATE TABLE `pages`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
--- Records of pages
--- ----------------------------
-INSERT INTO `pages` VALUES (1, 'about_us', 'About Us', 'About us', 'About us', '<p>Sabay Digital Corporation is the&nbsp;<strong>leading digital media and entertainment group in Cambodia</strong>.</p>\r\n\r\n<p>Our diverse brands share a common mission:&nbsp;<strong>help our customers get the most out of the online revolution</strong>. With cutting-edge services, engaging content and leading online properties, we want Sabay (meaning &ldquo;Happiness&rdquo;) to always be associated with&nbsp;<strong>awesomeness</strong>.</p>\r\n\r\n<p>We strive to&nbsp;<strong>innovate</strong>&nbsp;in everything we do: online and mobile gaming, movies, infrastructure, content platforms and more. We are proud to have in our portfolio Sabay News, the most visited Khmer website.</p>\r\n\r\n<p>Cambodia is an exciting country with a dynamic youth community eager to play an active role in the digital era. Sabay Digital Corporation (formerly known as CIDC Information Technology) was formed in 2007 to help meet this demand, with new services and products including online content and mobile entertainment.&nbsp;Sabay is a forward thinking pioneer and has been the first to introduce online gaming, unified SMS content and original online entertainment (news, movies, music and TV) in the Kingdom of Wonder.</p>\r\n\r\n<p>Our vision is to&nbsp;be a source of inspiration for the youth of Cambodia in their pursuit of happiness and our mission is to make every interaction with Sabay an awesome experience.</p>', NULL, NULL, NULL, NULL);
-INSERT INTO `pages` VALUES (2, 'about_us', 'Contact', 'contact', 'contact', '<p>Sabay Digital Corporation is the&nbsp;<strong>leading digital media and entertainment group in Cambodia</strong>.</p>\r\n\r\n<p>Our diverse brands share a common mission:&nbsp;<strong>help our customers get the most out of the online revolution</strong>. With cutting-edge services, engaging content and leading online properties, we want Sabay (meaning &ldquo;Happiness&rdquo;) to always be associated with&nbsp;<strong>awesomeness</strong>.</p>\r\n\r\n<p>We strive to&nbsp;<strong>innovate</strong>&nbsp;in everything we do: online and mobile gaming, movies, infrastructure, content platforms and more. We are proud to have in our portfolio Sabay News, the most visited Khmer website.</p>\r\n\r\n<p>&nbsp;</p>', NULL, NULL, NULL, NULL);
-INSERT INTO `pages` VALUES (3, 'services', 'Policy', 'Policy', 'Policy', '<p>We collect information to provide better services to all of our users &ndash; from figuring out basic stuff like which language you speak, to more complex things like which&nbsp;<a href=\"https://www.google.com/policies/privacy/example/ads-youll-find-most-useful.html\">ads you&rsquo;ll find most useful</a>,&nbsp;<a href=\"https://www.google.com/policies/privacy/example/the-people-who-matter-most.html\">the people who matter most to you online</a>, or which YouTube videos you might like.</p>\r\n\r\n<p>We collect information in the following ways:</p>\r\n\r\n<ul>\r\n<li>\r\n<p>Information you give us.&nbsp;For example, many of our services require you to sign up for a Google Account. When you do, we&rsquo;ll ask for&nbsp;<a href=\"https://www.google.com/policies/privacy/key-terms/#toc-terms-personal-info\">personal information</a>, like your name, email address, telephone number or&nbsp;<a href=\"https://www.google.com/policies/privacy/example/credit-card.html\">credit card</a>&nbsp;to store with your account. If you want to take full advantage of the sharing features we offer, we might also ask you to create a publicly visible&nbsp;<a href=\"https://support.google.com/accounts/answer/112783?hl=en\">Google Profile</a>, which may include your name and photo.</p>\r\n</li>\r\n<li>\r\n<p>Information we get from your use of our services.&nbsp;We&nbsp;<a href=\"https://www.google.com/policies/privacy/example/collect-information.html\">collect information</a>&nbsp;about the services that you use and how you use them, like when you watch a video on YouTube, visit a website that uses our advertising services, or&nbsp;<a href=\"https://www.google.com/policies/privacy/example/view-and-interact-with-our-ads.html\">view and interact with our ads</a>&nbsp;and content. This information includes:</p>\r\n\r\n<ul>\r\n<li>\r\n<p><a href=\"https://www.google.com/policies/privacy/key-terms/#toc-terms-device\">Device information</a></p>\r\n\r\n<p>We collect&nbsp;<a href=\"https://www.google.com/policies/privacy/example/device-specific-information.html\">device-specific information</a>&nbsp;(such as your hardware model, operating system version,&nbsp;<a href=\"https://www.google.com/policies/privacy/key-terms/#toc-terms-unique-device-id\">unique device identifiers</a>, and mobile network information including phone number). Google may associate your&nbsp;<a href=\"https://www.google.com/policies/privacy/example/device-identifiers.html\">device identifiers</a>&nbsp;or&nbsp;<a href=\"https://www.google.com/policies/privacy/example/phone-number.html\">phone number</a>&nbsp;with your Google Account.</p>\r\n</li>\r\n<li>\r\n<p>Log information</p>\r\n\r\n<p>When you use our services or view content provided by Google, we automatically collect and store certain information in&nbsp;<a href=\"https://www.google.com/policies/privacy/key-terms/#toc-terms-server-logs\">server logs</a>. This includes:</p>\r\n\r\n<ul>\r\n<li>details of how you used our service, such as your search queries.</li>\r\n<li>telephony log information like your phone number, calling-party number, forwarding numbers, time and date of calls, duration of calls, SMS routing information and types of calls.</li>\r\n<li><a href=\"https://www.google.com/policies/privacy/key-terms/#toc-terms-ip\">Internet protocol address</a>.</li>\r\n<li>device event information such as crashes, system activity, hardware settings, browser type, browser language, the date and time of your request and referral URL.</li>\r\n<li>cookies that may uniquely identify your browser or your Google Account.</li>\r\n</ul>\r\n</li>\r\n<li>\r\n<p>Location information</p>\r\n\r\n<p>When you use Google services, we&nbsp;<a href=\"https://www.google.com/policies/privacy/example/may-collect-and-process-information.html\">may collect and process information about your actual location</a>. We use various technologies to determine location, including IP address, GPS,&nbsp;<a href=\"https://www.google.com/policies/privacy/example/sensors.html\">and other sensors</a>&nbsp;that may, for example, provide Google with information on nearby devices,&nbsp;<a href=\"https://www.google.com/policies/privacy/example/wifi-access-points-and-cell-towers.html\">Wi-Fi access points and cell towers</a>.</p>\r\n</li>\r\n<li>\r\n<p>Unique application numbers</p>\r\n\r\n<p>Certain services include a unique application number. This number and information about your installation (for example, the operating system type and application version number) may be sent to Google when you install or uninstall that service or when that service periodically contacts our servers, such as for automatic updates.</p>\r\n</li>\r\n<li>\r\n<p>Local storage</p>\r\n\r\n<p>We may collect and store information (including personal information) locally on your device using mechanisms such as&nbsp;<a href=\"https://www.google.com/policies/privacy/key-terms/#toc-terms-browser-storage\">browser web storage</a>&nbsp;(including HTML&nbsp;5) and&nbsp;<a href=\"https://www.google.com/policies/privacy/key-terms/#toc-terms-application-data-cache\">application data caches</a>.</p>\r\n</li>\r\n<li>\r\n<p>Cookies and similar technologies</p>\r\n\r\n<p>We&nbsp;<a href=\"https://www.google.com/policies/privacy/example/our-partners.html\">and our partners</a>&nbsp;use various technologies to collect and store information when you visit a Google service, and this may include using&nbsp;<a href=\"https://www.google.com/policies/privacy/key-terms/#toc-terms-cookie\">cookies or similar technologies</a>&nbsp;to identify your browser or device. We also use these technologies to collect and store information when you interact with services we offer to our partners, such as&nbsp;<a href=\"https://www.google.com/policies/privacy/example/advertising-services.html\">advertising services</a>&nbsp;or Google features that may appear on other sites. Our Google Analytics product helps businesses and site owners analyze the traffic to their websites and apps. When used in conjunction with our advertising services, such as those using the DoubleClick cookie, Google Analytics information is&nbsp;<a href=\"https://www.google.com/policies/privacy/example/linked-with-information-about-visits-to-multiple-sites.html\">linked, by the Google Analytics customer or by Google, using Google technology, with information about visits to multiple sites</a>.</p>\r\n</li>\r\n</ul>\r\n</li>\r\n</ul>\r\n\r\n<p>Information we collect when you are signed in to Google, in addition to information we obtain about you from partners, may be associated with your Google Account. When information is associated with your Google Account, we treat it as personal information. For more information about how you can access, manage or delete information that is associated with your Google Account, visit the&nbsp;<a href=\"https://www.google.com/policies/privacy/#infochoices\">Transparency and choice</a>&nbsp;section of this policy.</p>\r\n\r\n<div style=\"float:right\"><a href=\"https://www.google.com/policies/privacy/#content\">Back to top</a></div>\r\n\r\n<h2>How we use information we collect</h2>', '{\"meta_title\":\"Policy\",\"meta_description\":\"Policy\",\"meta_keywords\":\"Policy\"}', NULL, NULL, NULL);
-
--- ----------------------------
 -- Table structure for password_resets
 -- ----------------------------
 DROP TABLE IF EXISTS `password_resets`;
@@ -206,13 +199,17 @@ CREATE TABLE `settings`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of settings
 -- ----------------------------
-INSERT INTO `settings` VALUES (1, 'map-home-picture', '', NULL, NULL, '', 0, NULL, NULL);
-INSERT INTO `settings` VALUES (2, 'video-home-iframe-src', '', NULL, NULL, '', 0, NULL, NULL);
+INSERT INTO `settings` VALUES (1, 'map-home-picture', 'map-home-picture', 'Map Home', 'uploads/home/66011_1490326832.png', '{\"name\":\"value\",\"label\":\"Value\",\"type\":\"browse\"}', 0, NULL, '2018-03-03 06:49:20');
+INSERT INTO `settings` VALUES (2, 'video-home-iframe-src', 'video-home-iframe-src', 'Video Home', 'https://www.youtube.com/embed/qZfNDz_-H38?enablejsapi=1', '{\"name\":\"value\",\"label\":\"Value\",\"type\":\"text\"}', 0, NULL, NULL);
+INSERT INTO `settings` VALUES (3, 'company-name', 'company-name', 'Company Name', 'Master Suki Soup', '{\"name\":\"value\",\"label\":\"Value\",\"type\":\"text\"}', 0, NULL, NULL);
+INSERT INTO `settings` VALUES (4, 'address', 'address', 'Address', 'No.680, St 271, Phnom Penh', '{\"name\":\"value\",\"label\":\"Value\",\"type\":\"text\"}', 0, NULL, NULL);
+INSERT INTO `settings` VALUES (5, 'about-us', 'about-us', 'About US', '<p>The craft of cooking and creating has been around much longer than that. But did you know that the very first evidence for the consumption of Soup dates back to 6,000 B.C., and that was said to have been made of hippopotamus. Well it&#39;s unbelievable but it&#39;s true. Anyway are you looking for a new food experience? Are you ready for a &quot;Cambodia&quot; experience? If you answered yes to any of these two questions, Master Suki Soup with &quot;hot pot&quot; food concept is just the thing for you! We believe that soup is something more than food to fill our belies with. We are trying out best to provide to our customers very special taste and exclusive experience.</p>', '{\"name\":\"value\",\"label\":\"Value\",\"type\":\"ckeditor\"}', 0, NULL, '2018-03-03 07:04:53');
+INSERT INTO `settings` VALUES (6, 'career', 'career', 'Career', '<p>We had been focusing on developing our personnel ability to make sure that the quality. Besides salary and coverage fringe benefits, Master Suki Soup Restaurant also supports all of our personnel to have a happy life. Working to strengthen sustainable living and cultivating the mind in service.</p>', '{\"name\":\"value\",\"label\":\"Value\",\"type\":\"ckeditor\"}', 0, NULL, '2018-03-03 07:37:56');
 
 -- ----------------------------
 -- Table structure for tbl_applyjobs
@@ -260,12 +257,13 @@ CREATE TABLE `tbl_card_categories`  (
   `deleted_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `tbl_card_categories_card_cat_des_en_index`(`card_cat_des_en`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tbl_card_categories
 -- ----------------------------
 INSERT INTO `tbl_card_categories` VALUES (1, 'aa', 'a', 'administrator', 'ACTIVE', '2018-02-26 09:15:04', '2018-02-26 09:15:04', NULL);
+INSERT INTO `tbl_card_categories` VALUES (2, 'bbb', 'bb', 'administrator', 'ACTIVE', '2018-03-03 05:04:06', '2018-03-03 05:04:06', NULL);
 
 -- ----------------------------
 -- Table structure for tbl_cards
@@ -287,12 +285,13 @@ CREATE TABLE `tbl_cards`  (
   INDEX `tbl_cards_card_cate_index`(`card_cate`) USING BTREE,
   INDEX `tbl_cards_card_des_en_index`(`card_des_en`) USING BTREE,
   INDEX `tbl_cards_card_des_kh_index`(`card_des_kh`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tbl_cards
 -- ----------------------------
-INSERT INTO `tbl_cards` VALUES (1, 1, 'aaa', 'aa', 'uploads/images/products/65343_1519637007_2371.png', '<p>aaa</p>', 'administrator', 'ACTIVE', '2018-02-26 09:23:27', '2018-02-26 09:23:27', NULL);
+INSERT INTO `tbl_cards` VALUES (1, 1, 'aaa', 'aa', 'uploads/images/cards/64837_1520052643_4238.png', '<p>aaa</p>', 'administrator', 'ACTIVE', '2018-02-26 09:23:27', '2018-03-03 04:50:43', NULL);
+INSERT INTO `tbl_cards` VALUES (2, 2, 'bb', 'bbb', 'uploads/images/cards/89201_1520059279_3093.png', '<p>bbb</p>', 'administrator', 'ACTIVE', '2018-03-03 06:41:19', '2018-03-03 06:41:19', NULL);
 
 -- ----------------------------
 -- Table structure for tbl_categories
@@ -310,7 +309,13 @@ CREATE TABLE `tbl_categories`  (
   `deleted_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `tbl_categories_cat_des_en_index`(`cat_des_en`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of tbl_categories
+-- ----------------------------
+INSERT INTO `tbl_categories` VALUES (1, 'vegetable_and_mushroom', 'vegetable_and_mushroom', 'uploads/images/categories/45903_1520065980_1183.png', 'administrator', 'ACTIVE', '2018-03-03 08:30:04', '2018-03-03 10:09:51', NULL);
+INSERT INTO `tbl_categories` VALUES (2, 'bb', 'bbb', 'uploads/images/categories/68445_1520066008_4855.png', 'administrator', 'ACTIVE', '2018-03-03 08:33:28', '2018-03-03 08:33:28', NULL);
 
 -- ----------------------------
 -- Table structure for tbl_contacts
@@ -412,13 +417,14 @@ CREATE TABLE `tbl_postjobs`  (
   `post_date` date NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `tbl_postjobs_position_id_index`(`position_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tbl_postjobs
 -- ----------------------------
-INSERT INTO `tbl_postjobs` VALUES (1, 1, '<p>aaa</p>', 'administrator', 'ACTIVE', '2018-02-26 07:17:49', '2018-02-26 07:17:49', NULL, '2018-02-08');
-INSERT INTO `tbl_postjobs` VALUES (2, 1, '<p>b</p>', 'administrator', 'ACTIVE', '2018-02-26 07:19:58', '2018-02-26 07:19:58', NULL, '2018-02-26');
+INSERT INTO `tbl_postjobs` VALUES (1, 1, '<p>aaaaa</p>', 'administrator', 'ACTIVE', '2018-02-26 07:17:49', '2018-03-03 02:57:04', NULL, '2018-02-08');
+INSERT INTO `tbl_postjobs` VALUES (2, 1, '<p>bbbbb</p>', 'administrator', 'ACTIVE', '2018-02-26 07:19:58', '2018-03-03 02:56:58', NULL, '2018-02-26');
+INSERT INTO `tbl_postjobs` VALUES (3, 1, '<p>cccc</p>', 'administrator', 'ACTIVE', '2018-03-03 02:53:13', '2018-03-03 02:56:50', NULL, '2018-03-03');
 
 -- ----------------------------
 -- Table structure for tbl_products
@@ -434,6 +440,8 @@ CREATE TABLE `tbl_products`  (
   `image` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
   `qty` int(11) NULL DEFAULT NULL,
   `price` double NULL DEFAULT NULL,
+  `kalory` float(10, 0) NULL DEFAULT NULL,
+  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   `pro_promotion` enum('INACTIVE','ACTIVE') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'INACTIVE',
   `in_putter` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   `status` enum('ACTIVE','INACTIVE') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'ACTIVE',
@@ -448,7 +456,13 @@ CREATE TABLE `tbl_products`  (
   INDEX `tbl_products_pro_des_kh_index`(`pro_des_kh`) USING BTREE,
   INDEX `tbl_products_qty_index`(`qty`) USING BTREE,
   INDEX `tbl_products_price_index`(`price`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of tbl_products
+-- ----------------------------
+INSERT INTO `tbl_products` VALUES (1, 1, 1, '11', 'vegetable_and_mushroom', 'vegetable_and_mushroom', 'uploads/images/products/94679_1520068844_1108.png', 1, 11, 222, 'aaa', 'INACTIVE', 'administrator', 'ACTIVE', '2018-03-03 09:20:44', '2018-03-03 10:09:29', NULL);
+INSERT INTO `tbl_products` VALUES (2, 2, 2, '22', 'vegetable_and_mushroom', 'vegetable_and_mushroom', 'uploads/images/products/66314_1520068864_3507.png', 22, 22, 222, 'aa', 'INACTIVE', 'administrator', 'ACTIVE', '2018-03-03 09:21:04', '2018-03-03 10:08:57', NULL);
 
 -- ----------------------------
 -- Table structure for tbl_promotions
@@ -503,7 +517,13 @@ CREATE TABLE `tbl_types`  (
   `deleted_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `tbl_types_t_des_en_index`(`t_des_en`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of tbl_types
+-- ----------------------------
+INSERT INTO `tbl_types` VALUES (1, 'drink', 'drink', 'administrator', 'ACTIVE', '2018-03-03 08:59:46', '2018-03-03 08:59:46', NULL);
+INSERT INTO `tbl_types` VALUES (2, 'food', 'food', 'administrator', 'ACTIVE', '2018-03-03 08:59:54', '2018-03-03 08:59:54', NULL);
 
 -- ----------------------------
 -- Table structure for users

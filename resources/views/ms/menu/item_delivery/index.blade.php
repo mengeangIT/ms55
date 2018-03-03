@@ -1,4 +1,3 @@
-
 <div class="row textSubHeader m-b-0">
     <div class="col-xs-6 pull-right">
         <div class="paginationBox  paginationBoxTop">
@@ -15,27 +14,19 @@
             <div id="vegetable_render">
                 <div class="row masonry-grid">
                     @foreach($items as $item)
-                        @php
-                            $imds = json_decode($item->image,true);
-                            $img = count($imds)>0?$imds[0]:'';
-                        @endphp
                         <div class="healthymenuProductBox col-md-4 col-lg-3 col-xs-6 masonry-item">
                             <div class="productListHMBox">
                                 <a href="#xitemx-{{ $item->id }}"
                                    data-toggle="modal">
-                                    <img width="150" src="{{ url('img/cache/img300x300/'.\App\Helpers\Glb::get_basename($img)) }}">
+                                    <img width="150" src="{{ url('img/cache/img300x300/'.\App\Helpers\ITPC::get_basename($item->image)) }}">
                                 </a>
                             </div>
 
                             <div class="caption">
                                 <a href="#xitemx-{{ $item->id }}"
                                    data-toggle="modal">
-                                    @if(get_ses_lang() == 'km')
-                                        <h4>{{$item->title_km}}</h4>
-                                    @endif
-                                    @if(get_ses_lang() == 'en')
-                                        <h4>{{$item->title}}</h4>
-                                    @endif
+                                        <h4>{{$item->pro_des_en}}</h4>
+
                                 </a>
                                 <p><a class="readmore"
                                       href="#xitemx-{{ $item->id }}"
@@ -52,8 +43,8 @@
                                     <a class="btnAddtocart btnAddtocartText desktop-addCart"
                                        href="#" data-id="{{$item->id}}"
                                        data-price="{{$item->price}}"
-                                       data-name="{{$item->title}}"
-                                       data-image="{{ url('img/cache/img300x300/'.\App\Helpers\Glb::get_basename($img)) }}">
+                                       data-name="{{$item->pro_des_en}}"
+                                       data-image="{{ url('img/cache/img300x300/'.\App\Helpers\ITPC::get_basename($item->image)) }}">
                                         {{_t('add to cart')}}<img src="{{asset('ms/img/healthymenu/icon-tray.png')}}" alt=" ">
                                     </a>
                                 </div>
@@ -77,18 +68,13 @@
                                                     aria-hidden="true">×
                                             </button>
                                             <p class="img imgMenuPopup">
-                                                <img data-src="{{ url('img/cache/img300x300/'.\App\Helpers\Glb::get_basename($img)) }}" alt=" "
+                                                <img data-src="{{ url('img/cache/img300x300/'.\App\Helpers\ITPC::get_basename($item->image)) }}" alt=" "
                                                          class="lazyloaded my-reload-img">
                                             </p>
+                                                <h3>{{$item->pro_des_en}}</h3>
 
-                                            @if(get_ses_lang() == 'km')
-                                                <h3>{{$item->title_km}}</h3>
-                                            @endif
-                                            @if(get_ses_lang() == 'en')
-                                                <h3>{{$item->title}}</h3>
-                                            @endif
 
-                                            <p class="">{{$item->description}} </p>
+                                            <p class="">{{$item->pro_des_en}} </p>
                                             <p class="">
                                                 kalory: {{$item->kalory}}
                                                 kcal.</p>
@@ -103,7 +89,7 @@
                                                        data-id="{{$item->id}}"
                                                        data-price="{{$item->price}}"
                                                        data-name="{{$item->title}}"
-                                                       data-image="{{ url('img/cache/img300x300/'.\App\Helpers\Glb::get_basename($img)) }}">{{_t('add to cart')}}
+                                                       data-image="{{ url('img/cache/img300x300/'.\App\Helpers\ITPC::get_basename($item->image)) }}">{{_t('add to cart')}}
                                                         <img  src="{{asset('ms/img/healthymenu/icon-tray.png')}}"
                                                                 alt=" ">
                                                     </a>

@@ -23,6 +23,8 @@ class CreateTblProductsTable extends Migration
             $table->text('image')->nullable();
             $table->double('qty')->nullable()->default(0);
             $table->double('price')->nullable()->default(0);
+            $table->float('kalory')->nullable()->default(0);
+            $table->string('description')->nullable();
             $table->enum('pro_promotion', ['INACTIVE', 'ACTIVE'])->default('INACTIVE');
             $table->string('in_putter')->nullable();
             $table->enum('status', ['ACTIVE', 'INACTIVE'])->default('ACTIVE');

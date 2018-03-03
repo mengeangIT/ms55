@@ -1,3 +1,6 @@
+<?php
+$lang_file = 'ms_promotion';
+?>
 @extends('ms.layout.front')
 @section('title', 'PromotionPage')
 @section('url'){{url('/promotion')}}@endsection
@@ -15,14 +18,14 @@
                         <div class="col-xs-12">
                             <div class="breadcrumbList">
                                 <ul class="breadcrumb">
-                                    <li><a href="{{url('/')}}">{{_t('Home')}}</a></li>
-                                    <li class="active">{{_t('Promotion')}}</li>
+                                    <li><a href="{{url('/')}}">{{_t('home',$lang_file)}}</a></li>
+                                    <li class="active">{{_t('promotion',$lang_file)}}</li>
                                 </ul>
                             </div>
                             <div class="titleText">
                                 <div class="textHeaderNoImg">
                                     <div class="linegray">
-                                        <h2>{{_t('Promotion')}}</h2>
+                                        <h2>{{_t('promotion',$lang_file)}}</h2>
                                     </div>
                                     <div class="redbox"></div>
                                 </div>
@@ -31,7 +34,7 @@
                     </div>
 
                     <div class="row hidden-lg-up">
-                        <h1 class="textHeaderMobile">{{_t('Promotion')}}</h1>
+                        <h1 class="textHeaderMobile">{{_t('promotion',$lang_file)}}</h1>
                     </div>
                 </div>
 
@@ -63,7 +66,7 @@
                             <div class="col-xs-12">
                                 <div class="row textSubHeader">
                                     <div class="col-xs-12 ">
-                                        <h3 style="font-size: 24px;">{{_t('All Promotion')}}</h3>
+                                        <h3 style="font-size: 24px;">{{_t('all_promotion',$lang_file)}}</h3>
                                         <div class="graybox"></div>
                                     </div>
                                 </div>
@@ -88,12 +91,9 @@
                                         <div class="caption">
                                             <a href="{{url('/promotion/detail'.'/'.$promotion->id)}}">
 
-                                                {{--@if(get_ses_lang() == 'km')--}}
-                                                    {{--<h4>{{$promotion->promotion_des_kh}}</h4>--}}
-                                                {{--@endif--}}
-                                                {{--@if(get_ses_lang() == 'en')--}}
-                                                    {{--<h4>{{$promotion->promotion_des_en}}</h4>--}}
-                                                {{--@endif--}}
+
+                                                    <h4>{{$promotion->promotion_des_kh}}</h4>
+
 
                                             </a>
                                             <p class="postdateNews">

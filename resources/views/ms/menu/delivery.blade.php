@@ -1,3 +1,8 @@
+<?php
+$getSetting = \App\Helpers\ITPC::getSetting();
+$lang_file = 'ms_menu';
+?>
+
 @extends('ms.layout.front')
 @section('title', 'MenuDeliveryPage')
 @section('url'){{url('/menu/delivery')}}@endsection
@@ -18,8 +23,8 @@
                             <div class="col-xs-12">
                                 <div class="breadcrumbList">
                                     <ul class="breadcrumb">
-                                        <li><a href="{{url('/')}}">{{_t('Home')}}</a></li>
-                                        <li><a href="javascript:">{{_t('Healthy Menu')}}</a></li>
+                                        <li><a href="{{url('/')}}">{{_t('home',$lang_file)}}</a></li>
+                                        <li><a href="javascript:">{{_t('menu',$lang_file)}}</a></li>
                                         <li id="breadcrumb-last-title">{{$categoryName}}</li>
                                     </ul>
                                 </div>
@@ -28,7 +33,7 @@
                                         <div class="">
                                             <div class="textHeader">
                                                 <div class="linegray">
-                                                    <p style=" font-family: 'Hanuman','Roboto', serif;  font-size: 1.4rem; color: #02c477;">{{_t('Healthy Menu')}}</p>
+                                                    <p style=" font-family: 'Hanuman','Roboto', serif;  font-size: 1.4rem; color: #02c477;">{{_t('menu',$lang_file)}}</p>
                                                     <div class="clearfix"></div>
                                                 </div>
                                                 <div class="redbox"></div>
@@ -51,10 +56,10 @@
                                     <div class="subHealthymemu hidden-sm-down">
                                         <ul id="subHealthymemuList" class="nav nav-tabs">
                                             <li class="text-center"><a id="" href="{{url('/menu/restaurant')}}"><h6>
-                                                        <strong>{{_t('At Restaurant')}}</strong></h6></a></li>
+                                                        <strong>{{_t('at_restaurant',$lang_file)}}</strong></h6></a></li>
                                             <li class="active text-center"><a id="" href="{{url('/menu/delivery')}}">
                                                     <h6>
-                                                        <strong>{{_t('Online Delivery')}}</strong></h6></a></li>
+                                                        <strong>{{_t('online_delivery',$lang_file)}}</strong></h6></a></li>
                                         </ul>
                                     </div>
                                     <div class="tab-sub-heathy-menu-full hidden-sm-down">
@@ -77,10 +82,10 @@
                                 {{--==============right side bar ================--}}
                                 <div class="sidebarRightDelivery col-lg-3 col-sm-4 hidden-sm-down">
                                     <div class="timeDeliverySetting">
-                                        <h3 class="m-a-0">HOME <strong>DELIVERY</strong></h3>
+                                        <h3 class="m-a-0">{{_t('home',$lang_file)}} <strong>{{_t('delivery',$lang_file)}}</strong></h3>
                                         <img src="{{URL::asset('/')}}ms/img/responsive/clock.png" width="44"
                                              height="44">
-                                        <span class="textOrderFood">Available Hours</span>
+                                        <span class="textOrderFood">{{_t('available_hours',$lang_file)}}</span>
                                         <span class="textTimeSetting text-nowrap">
                                         <strong>09:45 - 21:00</strong>
                                         </span>
@@ -180,7 +185,7 @@
 
                                     <div class="foodFavorite m-t">
                                         <div class="textHeaderFavorite">
-                                            <h3>Last Order Menu</h3>
+                                            <h3>{{_t('last_order_menu',$lang_file)}}</h3>
                                         </div>
                                         <div class="tab-sidebar-right"></div>
                                         <div id="listProductFavorite">
@@ -190,7 +195,7 @@
                                     </div>
                                     <div class="locationDeliveryBox">
                                         <a class="btnlocationDelivery" href="{{url('/branch')}}">
-                                            <img src="{{URL::asset('/map.png')}}"
+                                            <img src="{{ asset('/uploads/home/'.\App\Helpers\ITPC::get_basename(\App\Helpers\ITPC::getSettingKey('map-home-picture',$getSetting))) }}"
                                                  alt="Location Delivery" width="100%">
                                         </a>
                                     </div>
