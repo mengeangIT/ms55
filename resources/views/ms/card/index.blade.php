@@ -16,7 +16,9 @@
             <?php
             function select1($card_category_id)
             {
-                return 'SELECT * FROM tbl_cards WHERE tbl_cards.status = "ACTIVE"  AND  tbl_cards.card_cate = ' . $card_category_id;
+                $card = \App\Models\TblCard::where('status','=','ACTIVE')->where('card_cate','=',$card_category_id)->get();
+                return $card;
+//                return 'SELECT * FROM tbl_cards WHERE tbl_cards.status = "ACTIVE"  AND  tbl_cards.card_cate = ' . $card_category_id;
             }
             $i = 1;
             ?>
@@ -83,7 +85,7 @@
                                                  class="tab-pane x-hide card{{$card_category->id}}">
                                                 <?php $i++; ?>
                                                 <div class="row">
-                                                    @foreach ( collect(\Illuminate\Support\Facades\DB::select(select1($card_category->id)))->chunk(3) as $chunk)
+                                                    @foreach ( collect(select1($card_category->id))->chunk(3) as $chunk)
                                                         @foreach($chunk as $card)
                                                             <div class="col-xs-12 col-sm-4 text-center">
                                                                 <div class="m-t">
