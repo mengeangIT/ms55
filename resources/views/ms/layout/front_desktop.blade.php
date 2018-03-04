@@ -7,18 +7,17 @@
             <div class="col-md-12">
                 <div class="langHeader pull-right">
                     <ul class="nav nav-pills">
-                        <li>
-                            <a class="" href="{{url('/lang/km')}}">
-                                <img src="{{asset('/ms/img/km.svg')}}" width="28" height="18"
-                                     alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a class="" href="{{url('/lang/en')}}">
-                                <img src="{{asset('/ms/img/en.svg')}}" width="28" height="18"
-                                     alt="">
-                            </a>
-                        </li>
+                        @php
+                            $langs = \Backpack\LangFileManager\app\Models\Language::where('active',1)->get();
+                        @endphp
+                        @foreach($langs as $row)
+                            <li>
+                                <a class="" href="{{url('/lang/km')}}">
+                                    <img src="{{asset($row->flag)}}" width="28" height="18"
+                                         alt="">
+                                </a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="logo pull-left">

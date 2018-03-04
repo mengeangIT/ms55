@@ -32,19 +32,8 @@ class TblCardCategoryCrudController extends CrudController
 
         // ------ CRUD FIELDS
         $this->crud->addField([
-            'name' => 'card_cat_des_en',
-            'label' => 'card_cat_des_en',
-            'type' => 'text',
-            'wrapperAttributes' => [
-                'class' => 'form-group col-md-6'
-            ],
-            'attributes' => [
-                'class' => 'form-control'
-            ],
-        ]);
-        $this->crud->addField([
-            'name' => 'card_cat_des_kh',
-            'label' => 'card_cat_des_kh',
+            'name' => 'title',
+            'label' => 'title',
             'type' => 'text',
             'wrapperAttributes' => [
                 'class' => 'form-group col-md-6'
@@ -85,14 +74,9 @@ class TblCardCategoryCrudController extends CrudController
 
         // ------ CRUD COLUMNS
         $this->crud->addColumn([
-            'name' => 'card_cat_des_en',
-            'label' => 'card_cat_des_en',
+            'name' => 'title',
+            'label' => 'title',
         ]);
-        $this->crud->addColumn([
-            'name' => 'card_cat_des_kh',
-            'label' => 'card_cat_des_kh',
-        ]);
-
         $this->crud->addColumn([
             'name' => 'in_putter',
             'label' => 'in_putter',

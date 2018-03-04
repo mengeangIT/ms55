@@ -4,7 +4,7 @@
 
                 <a data-toggle="tab"  href="#card{{$card_category->id}}"  class="my-activemenu-card">
                     <span>{{_t('MS')}} &nbsp;</span>
-                    <br class="hidden-xs-down">{{$card_category->card_cat_des_en}}
+                    <br class="hidden-xs-down">{{$card_category->title}}
                 </a>
 
         </li>

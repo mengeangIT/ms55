@@ -15,8 +15,7 @@ class CreateTblPositionsTable extends Migration
     {
         Schema::create('tbl_positions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('position_des_en')->index()->nullable();
-            $table->string('position_des_kh')->index();
+            $table->string('title')->index()->nullable();
             $table->string('in_putter')->nullable();
             $table->enum('status', ['ACTIVE', 'INACTIVE'])->default('ACTIVE');
             $table->timestamps();

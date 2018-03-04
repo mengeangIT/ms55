@@ -6,11 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
+use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
 
 class TblCard extends Model
 {
     use CrudTrait;
-
+    use HasTranslations;
     /*
     |--------------------------------------------------------------------------
     | GLOBAL VARIABLES
@@ -21,9 +22,10 @@ class TblCard extends Model
      protected $primaryKey = 'id';
      public $timestamps = true;
     // protected $guarded = ['id'];
-    protected $fillable = ['card_cate','card_des_en','card_des_kh','image','content','in_putter','status'];
+    protected $fillable = ['card_cate','title','image','content','in_putter','status'];
     // protected $hidden = [];
     // protected $dates = [];
+    protected $translatable = ['title', 'content'];
 
     /*
     |--------------------------------------------------------------------------

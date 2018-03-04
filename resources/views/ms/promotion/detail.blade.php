@@ -12,6 +12,7 @@ $lang_file = 'ms_promotion';
                 @include('ms.layout.delivery')
             @endif
         @section('content')
+            @if(count($promotion) >0 )
                 <div class="boxpage">
                     <div class="container">
 
@@ -45,7 +46,7 @@ $lang_file = 'ms_promotion';
                         <div class="promotionDescription m-t">
                             <div class="textHeaderDes">
 
-                                    <h3 style="font-size: 24px;">{{$promotion->promotion_des_en}}</h3>
+                                    <h3 style="font-size: 24px;">{{$promotion->title}}</h3>
 
                                 <div class="graybox"></div>
                             </div>
@@ -75,6 +76,7 @@ $lang_file = 'ms_promotion';
                         </div>
                     </div>
                 </div>
+            @endif
         @endsection
     @section('layout-id-close')
         </div>

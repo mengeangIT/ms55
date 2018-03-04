@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Customer;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
 use App\Http\Requests\CustomerRequest as StoreRequest;
@@ -10,9 +13,66 @@ use App\Http\Requests\CustomerRequest as UpdateRequest;
 
 class CustomerCrudController extends CrudController
 {
+    public function changePass(Request $request){
+        $row = Customer::find($request->id);
+        return view('custom.customer.change-pass',['row' => $row]);
+    }
+    public function changePassSave(Request $request){
+        $id = $request->id;
+
+        $validator = Validator::make($request->all(), [
+            'password' => 'required|string|min:6|confirmed',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('admin/customer')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $m = Customer::find($id);
+
+        if($m != null)
+        {
+            $m->password =  bcrypt($request->password);
+            $m->save();
+        }
+
+        return redirect('admin/customer');
+    }
+
+    public function index2(Request $request)
+    {
+        $search_term = $request->input('q');
+        $page = $request->input('page');
+        if ($search_term)
+        {
+            $results = Customer::where('name', 'LIKE', '%'.$search_term.'%')->paginate(10);
+        }
+        else
+        {
+            $results = Customer::paginate(10);
+        }
+        return $results;
+    }
+    public function show2($id)
+    {
+        return Customer::find($id);
+    }
+    public function getPhones() {
+        $term = $this->request->input('term');
+        $options = Customer::where('phone', 'like', '%'.$term.'%')->get();
+        return $options->pluck('phone', 'phone');
+    }
+    public function getName() {
+        $term = $this->request->input('term');
+        $options = Customer::where('name', 'like', '%'.$term.'%')->get();
+        return $options->pluck('name', 'name');
+    }
+
     public function setup()
     {
-
+        $lang_file = 'customer';
         /*
         |--------------------------------------------------------------------------
         | BASIC CRUD INFORMATION
@@ -28,15 +88,69 @@ class CustomerCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-        $this->crud->setFromDb();
+//        $this->crud->setFromDb();
 
         // ------ CRUD FIELDS
+        $this->crud->addField([
+            'name' => 'name',
+            'label' => _t('name', $lang_file),
+            //'tab' => 'Information',
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-4'
+            ],
+            'attributes' => [
+                'class' => 'form-control'
+            ],
+        ]);
+        $this->crud->addField([
+            'name' => 'phone',
+            'label' => _t('phone', $lang_file),
+            //'tab' => 'Information',
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-4'
+            ],
+            'attributes' => [
+                'class' => 'form-control'
+            ],
+        ]);
+        $this->crud->addField([
+            'name' => 'password',
+            'label' => _t('password', $lang_file),
+            'type' => 'password',
+            //'tab' => 'Information',
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-4'
+            ],
+            'attributes' => [
+                'class' => 'form-control'
+            ],
+        ]);
+        $this->crud->addField([
+            'name' => 'password_confirmation',
+            'label' => _t('Confirm Password', $lang_file),
+            'type' => 'password',
+            //'tab' => 'Information',
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-4'
+            ],
+            'attributes' => [
+                'class' => 'form-control'
+            ],
+        ]);
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
         // $this->crud->removeField('name', 'update/create/both');
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
         // ------ CRUD COLUMNS
+        $this->crud->addColumn([
+            'name' => 'name',
+            'label' => _t('name', $lang_file),
+        ]);
+        $this->crud->addColumn([
+            'name' => 'phone',
+            'label' => _t('phone', $lang_file),
+        ]);
         // $this->crud->addColumn(); // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
         // $this->crud->removeColumn('column_name'); // remove a column from the stack
@@ -44,7 +158,33 @@ class CustomerCrudController extends CrudController
         // $this->crud->setColumnDetails('column_name', ['attribute' => 'value']); // adjusts the properties of the passed in column (by name)
         // $this->crud->setColumnsDetails(['column_1', 'column_2'], ['attribute' => 'value']);
 
+        $this->crud->addFilter([ // select2_ajax filter
+            'name' => 'name',
+            'type' => 'select2_ajax',
+            'label'=> _t('name',$lang_file),
+            'placeholder' => 'Pick a Name'
+        ],
+            url('admin/ajax-customer-name'), // the ajax route
+            function($value) { // if the filter is active
+                $this->crud->addClause('where', 'name', $value);
+            });
+
+        $this->crud->addFilter([ // select2_ajax filter
+            'name' => 'phone',
+            'type' => 'select2_ajax',
+            'label'=> _t('phone',$lang_file),
+            'placeholder' => 'Pick a Phone'
+        ],
+            url('admin/ajax-customer-phone'), // the ajax route
+            function($value) { // if the filter is active
+                $this->crud->addClause('where', 'phone', $value);
+            });
+
         // ------ CRUD BUTTONS
+        $this->crud->removeFields(['password','password_confirmation'], 'update');
+
+        $this->crud->addButtonFromModelFunction('line', 'change_password',
+            'changePassword', 'beginning');
         // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;
         // $this->crud->addButton($stack, $name, $type, $content, $position); // add a button; possible types are: view, model_function
         // $this->crud->addButtonFromModelFunction($stack, $name, $model_function_name, $position); // add a button whose HTML is returned by a method in the CRUD model
@@ -101,15 +241,36 @@ class CustomerCrudController extends CrudController
 
     public function store(StoreRequest $request)
     {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|min:1|max:255',
+            'phone' => 'required'
+
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('admin/customer')->withErrors($validator);
+        }
         // your additional operations before save here
         $redirect_location = parent::storeCrud($request);
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
+        $m = Customer::find( $this->crud->entry->id);
+        $m->password = bcrypt($request->password);
+        $m->save();
+
         return $redirect_location;
     }
 
     public function update(UpdateRequest $request)
     {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|min:1|max:255',
+            'phone' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('admin/customer')->withErrors($validator);
+        }
         // your additional operations before save here
         $redirect_location = parent::updateCrud($request);
         // your additional operations after save here

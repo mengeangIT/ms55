@@ -256,12 +256,22 @@
                 @if ( !session('customer_name'))
                     <li class="nav-lang-login-regis">
                         <div class="col-xs-4 p-a-0">
-                            <a href="{{url('/lang/km')}}" class="col-xs-6 text-right">
-                                <img src="{{asset('/ms/img/km.svg')}}" width="28" height="18" alt="">
-                            </a>
-                            <a href="{{url('/lang/en')}}" class="col-xs-6 text-left">
-                                <img src="{{asset('/ms/img/en.svg')}}" width="28" height="18" alt="">
-                            </a>
+
+                            @php
+                                $langs = \Backpack\LangFileManager\app\Models\Language::where('active',1)->get();
+                            @endphp
+                            @foreach($langs as $row)
+                                <a href="{{url('/lang/km')}}" class="col-xs-6 text-right">
+                                    <img src="{{asset($row->flag)}}" width="28" height="18" alt="">
+                                </a>
+                            @endforeach
+
+
+                            {{--<a href="{{url('/lang/en')}}" class="col-xs-6 text-left">--}}
+                                {{--<img src="{{asset('/ms/img/en.svg')}}" width="28" height="18" alt="">--}}
+                            {{--</a>--}}
+
+
                         </div>
 
 
@@ -280,12 +290,14 @@
                     {{--======================= member login show master bar home page===============================--}}
                     <li class="nav-lang-login-regis">
                         <div class="col-xs-4 p-a-0 text-center switch-lang">
-                            <a href="{{url('/lang/km')}}" class="col-xs-6 text-right">
-                                <img src="{{asset('/ms/img/km.svg')}}" width="28" height="18" alt="">
-                            </a>
-                            <a href="{{url('/lang/en')}}" class="col-xs-6 text-left">
-                                <img src="{{asset('/ms/img/en.svg')}}" width="28" height="18" alt="">
-                            </a>
+                            @php
+                                $langs = \Backpack\LangFileManager\app\Models\Language::where('active',1)->get();
+                            @endphp
+                            @foreach($langs as $row)
+                                <a href="{{url('/lang/km')}}" class="col-xs-6 text-right">
+                                    <img src="{{asset($row->flag)}}" width="28" height="18" alt="">
+                                </a>
+                            @endforeach
                         </div>
 
 

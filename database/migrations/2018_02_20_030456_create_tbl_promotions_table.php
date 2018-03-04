@@ -15,8 +15,7 @@ class CreateTblPromotionsTable extends Migration
     {
         Schema::create('tbl_promotions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('promotion_des_en')->index()->nullable();
-            $table->string('promotion_des_kh')->index();
+            $table->string('title')->index()->nullable();
             $table->dateTime('start_date')->nullable();
             $table->dateTime('last_date')->nullable();
             $table->text('image')->nullable();

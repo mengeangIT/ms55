@@ -45,8 +45,8 @@
                     <div class="row hidden-lg-up">
                         <h1 class="textHeaderMobile">{{_t('MS Card')}}</h1>
                     </div>
-
-                    <div class="row">
+                    @if(count($card_categories) > 0)
+                        <div class="row">
                         <div class="col-xs-12">
                             @if(!is_m() || is_t())
                                 <div class="textTitle text-center xhiddenx-xs-down linegray">
@@ -97,7 +97,7 @@
 
                                                                         <a class="cardTitleCol"
                                                                            href="{{url('/card/detail/'.$card->id)}}">
-                                                                            {{$card->card_des_en}} </a>
+                                                                            {{$card->title}} </a>
 
 
                                                                 </div>
@@ -120,6 +120,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
         @endsection

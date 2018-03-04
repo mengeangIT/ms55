@@ -181,6 +181,7 @@ return [
         App\Providers\HelperServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
+        Backpack\LangFileManager\LangFileManagerServiceProvider::class,
 
     ],
 

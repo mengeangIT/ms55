@@ -1,4 +1,12 @@
 <?php
+function getLangs(){
+    $langs = Backpack\LangFileManager\app\Models\Language::get();
+    $tttt = array();
+    foreach ($langs as $row){
+        $tttt[$row->abbr] = $row->name;
+    }
+    return $tttt;
+}
 
 function getUser(){
     $getUser = Auth::getUser();

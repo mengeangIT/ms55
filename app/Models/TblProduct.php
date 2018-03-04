@@ -6,11 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
+use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
 
 class TblProduct extends Model
 {
     use CrudTrait;
-
+    use HasTranslations;
      /*
     |--------------------------------------------------------------------------
     | GLOBAL VARIABLES
@@ -21,10 +22,10 @@ class TblProduct extends Model
     protected $primaryKey = 'id';
      public $timestamps = true;
     // protected $guarded = ['id'];
-     protected $fillable = ['pro_cate','pro_type','pro_code','pro_des_en','pro_des_kh','image','qty','price','kalory','description','pro_promotion','in_putter','status'];
+     protected $fillable = ['pro_cate','pro_type','pro_code','title','image','qty','price','kalory','description','pro_promotion','in_putter','status'];
     // protected $hidden = [];
     // protected $dates = [];
-
+    protected $translatable = ['title', 'description'];
     /*
     |--------------------------------------------------------------------------
     | FUNCTIONS

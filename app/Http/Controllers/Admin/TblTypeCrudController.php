@@ -32,8 +32,8 @@ class TblTypeCrudController extends CrudController
 
         // ------ CRUD FIELDS
         $this->crud->addField([
-            'name' => 't_des_en',
-            'label' => 't_des_en',
+            'name' => 'title',
+            'label' => 'title',
             'type' => 'text',
             'wrapperAttributes' => [
                 'class' => 'form-group col-md-6'
@@ -42,17 +42,7 @@ class TblTypeCrudController extends CrudController
                 'class' => 'form-control'
             ],
         ]);
-        $this->crud->addField([
-            'name' => 't_des_kh',
-            'label' => 't_des_kh',
-            'type' => 'text',
-            'wrapperAttributes' => [
-                'class' => 'form-group col-md-6'
-            ],
-            'attributes' => [
-                'class' => 'form-control'
-            ],
-        ]);
+
         $this->crud->addField([
             'name' => 'in_putter',
             'label' => 'in_putter',
@@ -84,12 +74,8 @@ class TblTypeCrudController extends CrudController
 
         // ------ CRUD COLUMNS
         $this->crud->addColumn([
-            'name' => 't_des_en',
-            'label' => 't_des_en',
-        ]);
-        $this->crud->addColumn([
-            'name' => 't_des_kh',
-            'label' => 't_des_kh',
+            'name' => 'title',
+            'label' => 'title',
         ]);
         $this->crud->addColumn([
             'name' => 'in_putter',

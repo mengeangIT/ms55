@@ -21,7 +21,7 @@ $lang_file = 'ms_menu';
                      alt="{{$itemCategory->title}}"
                      class="img-responsive img-center">
 
-                <p class="m-t">{{$itemCategory->cat_des_en}}</p> <i
+                <p class="m-t">{{$itemCategory->title}}</p> <i
                         class="fa fa-play"></i>
 
 

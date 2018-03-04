@@ -32,8 +32,8 @@ class TblPromotionCrudController extends CrudController
 
         // ------ CRUD FIELDS
         $this->crud->addField([
-            'name' => 'promotion_des_en',
-            'label' => 'promotion_des_en',
+            'name' => 'title',
+            'label' => 'title',
             'type' => 'text',
             'wrapperAttributes' => [
                 'class' => 'form-group col-md-6'
@@ -43,17 +43,6 @@ class TblPromotionCrudController extends CrudController
             ],
         ]);
 
-        $this->crud->addField([
-            'name' => 'promotion_des_kh',
-            'label' => 'promotion_des_kh',
-            'type' => 'text',
-            'wrapperAttributes' => [
-                'class' => 'form-group col-md-6'
-            ],
-            'attributes' => [
-                'class' => 'form-control'
-            ],
-        ]);
         $this->crud->addField([
             'name' => 'start_date',
             'label' => _t('start_date'),
@@ -128,12 +117,8 @@ class TblPromotionCrudController extends CrudController
 
         // ------ CRUD COLUMNS
         $this->crud->addColumn([
-            'name' => 'promotion_des_en',
-            'label' => 'promotion_des_en',
-        ]);
-        $this->crud->addColumn([
-            'name' => 'promotion_des_kh',
-            'label' => 'promotion_des_kh',
+            'name' => 'title',
+            'label' => 'title',
         ]);
         $this->crud->addColumn([
             'name' => 'start_date',

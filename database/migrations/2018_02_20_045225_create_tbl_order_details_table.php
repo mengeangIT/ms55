@@ -15,7 +15,15 @@ class CreateTblOrderDetailsTable extends Migration
     {
         Schema::create('tbl_order_details', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('pro_id')->nullable()->index();
+            $table->integer('order_id')->nullable()->index();
+            $table->string('rowId')->index()->nullable();
+            $table->string('title')->index()->nullable();
+            $table->text('image')->nullable();
+            $table->double('qty')->nullable()->default(0);
+            $table->double('price')->nullable()->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

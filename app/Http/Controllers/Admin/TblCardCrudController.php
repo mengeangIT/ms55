@@ -36,7 +36,7 @@ class TblCardCrudController extends CrudController
             'label' => 'card_cate',
             'type' => 'select',
             'entity' => 'cardCategory',
-            'attribute' => 'card_cat_des_en',
+            'attribute' => 'title',
             'model' => "App\Models\TblCardCategory",
             'wrapperAttributes' => [
                 'class' => 'form-group col-md-6'
@@ -47,19 +47,8 @@ class TblCardCrudController extends CrudController
         ]);
 
         $this->crud->addField([
-            'name' => 'card_des_en',
-            'label' => 'card_des_en',
-            'type' => 'text',
-            'wrapperAttributes' => [
-                'class' => 'form-group col-md-6'
-            ],
-            'attributes' => [
-                'class' => 'form-control'
-            ],
-        ]);
-        $this->crud->addField([
-            'name' => 'card_des_kh',
-            'label' => 'card_des_kh',
+            'name' => 'title',
+            'label' => 'title',
             'type' => 'text',
             'wrapperAttributes' => [
                 'class' => 'form-group col-md-6'
@@ -125,17 +114,13 @@ class TblCardCrudController extends CrudController
             'type' => 'select',
             'name' => 'card_cate',
             'entity' => 'cardCategory',
-            'attribute' => 'card_cat_des_en',
+            'attribute' => 'title',
             'model' => "App\Models\TblCardCategory",
         ]);
 
         $this->crud->addColumn([
-            'name' => 'card_des_en',
-            'label' => 'card_des_en',
-        ]);
-        $this->crud->addColumn([
-            'name' => 'card_des_kh',
-            'label' => 'card_des_kh',
+            'name' => 'title',
+            'label' => 'title',
         ]);
 
         $this->crud->addColumn([

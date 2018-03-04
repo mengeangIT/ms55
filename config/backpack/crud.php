@@ -69,7 +69,10 @@ return [
     'show_translatable_field_icon' => true,
     'translatable_field_icon_position' => 'right', // left or right
 
-    'locales' => [
+    'locales' =>
+        [
+//        'en' => 'English',
+//        "km" => "Khmer",
         // "af_NA" => "Afrikaans (Namibia)",
         // "af_ZA" => "Afrikaans (South Africa)",
         // "af" => "Afrikaans",
@@ -186,7 +189,7 @@ return [
         // "en_GB" => "English (United Kingdom)",
         // "en_US" => "English (United States)",
         // "en_ZW" => "English (Zimbabwe)",
-        'en' => 'English',
+
         // "eo" => "Esperanto",
         // "et_EE" => "Estonian (Estonia)",
         // "et" => "Estonian",
@@ -290,12 +293,13 @@ return [
         // "kam_KE" => "Kamba (Kenya)",
         // "kam" => "Kamba",
         // "kn_IN" => "Kannada (India)",
+        // "kn_IN" => "Kannada (India)",
         // "kn" => "Kannada",
         // "kk_Cyrl" => "Kazakh (Cyrillic)",
         // "kk_Cyrl_KZ" => "Kazakh (Cyrillic, Kazakhstan)",
         // "kk" => "Kazakh",
         //"km_KH" => "Khmer (Cambodia)",
-        "km" => "Khmer",
+
         // "ki_KE" => "Kikuyu (Kenya)",
         // "ki" => "Kikuyu",
         // "rw_RW" => "Kinyarwanda (Rwanda)",

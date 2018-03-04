@@ -30,7 +30,7 @@
                                        data-toggle="modal">
 
 
-                                            <h4>{{$item->pro_des_en}}</h4>
+                                            <h4>{{$item->title}}</h4>
 
                                     </a>
                                     <p><a class="readmore"
@@ -64,7 +64,7 @@
                                                 </p>
 
 
-                                                    <h3>{{$item->pro_des_en}}</h3>
+                                                    <h3>{{$item->title}}</h3>
 
                                                 <p class="">{{$item->description}} </p>
                                                 <p class="">

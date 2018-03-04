@@ -25,7 +25,7 @@
                             <div class="caption">
                                 <a href="#xitemx-{{ $item->id }}"
                                    data-toggle="modal">
-                                        <h4>{{$item->pro_des_en}}</h4>
+                                        <h4>{{$item->title}}</h4>
 
                                 </a>
                                 <p><a class="readmore"
@@ -43,7 +43,7 @@
                                     <a class="btnAddtocart btnAddtocartText desktop-addCart"
                                        href="#" data-id="{{$item->id}}"
                                        data-price="{{$item->price}}"
-                                       data-name="{{$item->pro_des_en}}"
+                                       data-name="{{$item->title}}"
                                        data-image="{{ url('img/cache/img300x300/'.\App\Helpers\ITPC::get_basename($item->image)) }}">
                                         {{_t('add to cart')}}<img src="{{asset('ms/img/healthymenu/icon-tray.png')}}" alt=" ">
                                     </a>
@@ -71,10 +71,10 @@
                                                 <img data-src="{{ url('img/cache/img300x300/'.\App\Helpers\ITPC::get_basename($item->image)) }}" alt=" "
                                                          class="lazyloaded my-reload-img">
                                             </p>
-                                                <h3>{{$item->pro_des_en}}</h3>
+                                                <h3>{{$item->title}}</h3>
 
 
-                                            <p class="">{{$item->pro_des_en}} </p>
+                                            <p class="">{{$item->description}} </p>
                                             <p class="">
                                                 kalory: {{$item->kalory}}
                                                 kcal.</p>

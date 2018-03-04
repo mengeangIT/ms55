@@ -6,11 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
+use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
+
 
 class TblCategory extends Model
 {
     use CrudTrait;
-
+    use HasTranslations;
      /*
     |--------------------------------------------------------------------------
     | GLOBAL VARIABLES
@@ -21,10 +23,10 @@ class TblCategory extends Model
     protected $primaryKey = 'id';
      public $timestamps = true;
     // protected $guarded = ['id'];
-     protected $fillable = ['cat_des_en','cat_des_kh','image','in_putter','status'];
+     protected $fillable = ['title','image','in_putter','status'];
     // protected $hidden = [];
     // protected $dates = [];
-
+    protected $translatable = ['title'];
     /*
     |--------------------------------------------------------------------------
     | FUNCTIONS

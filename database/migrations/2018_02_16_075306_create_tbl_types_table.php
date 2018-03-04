@@ -15,8 +15,7 @@ class CreateTblTypesTable extends Migration
     {
         Schema::create('tbl_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('t_des_en')->index()->nullable();
-            $table->string('t_des_kh')->nullable();
+            $table->string('title')->index()->nullable();
             $table->string('in_putter')->nullable();
             $table->enum('status', ['ACTIVE', 'INACTIVE'])->default('ACTIVE');
             $table->timestamps();

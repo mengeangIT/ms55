@@ -32,8 +32,8 @@ class TblPositionCrudController extends CrudController
 
         // ------ CRUD FIELDS
         $this->crud->addField([
-            'name' => 'position_des_en',
-            'label' => 'position_des_en',
+            'name' => 'title',
+            'label' => 'title',
             'type' => 'text',
             'wrapperAttributes' => [
                 'class' => 'form-group col-md-6'
@@ -42,18 +42,6 @@ class TblPositionCrudController extends CrudController
                 'class' => 'form-control'
             ],
         ]);
-        $this->crud->addField([
-            'name' => 'position_des_kh',
-            'label' => 'position_des_kh',
-            'type' => 'text',
-            'wrapperAttributes' => [
-                'class' => 'form-group col-md-6'
-            ],
-            'attributes' => [
-                'class' => 'form-control'
-            ],
-        ]);
-
         $this->crud->addField([
             'name' => 'in_putter',
             'label' => 'in_putter',
@@ -85,12 +73,8 @@ class TblPositionCrudController extends CrudController
 
         // ------ CRUD COLUMNS
         $this->crud->addColumn([
-            'name' => 'position_des_en',
-            'label' => 'position_des_en',
-        ]);
-        $this->crud->addColumn([
-            'name' => 'position_des_kh',
-            'label' => 'position_des_kh',
+            'name' => 'title',
+            'label' => 'title',
         ]);
         $this->crud->addColumn([
             'name' => 'in_putter',

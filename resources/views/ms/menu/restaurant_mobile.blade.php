@@ -79,7 +79,7 @@
                                     <div class="div-product-img">
                                         <img class="product-img" src="{{ url('img/cache/img300x300/'.\App\Helpers\ITPC::get_basename($item->image)) }}">
                                     </div>
-                                    <p class="m-a-0 kcal-detail">{{$item->pro_des_en}}</p>
+                                    <p class="m-a-0 kcal-detail">{{$item->title}}</p>
                                     <hr>
                                     <p class="m-a-0 text-left">{{$item->kalory}} kcal.</p>
                                     <div style="background:#7a7a7a;color:#ffffff;font-family: 'Roboto', serif;font-size: 14px;line-height: 30px" class="text-center m-t">Menu in Restaurant</div>

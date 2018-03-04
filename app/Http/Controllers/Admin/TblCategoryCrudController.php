@@ -32,8 +32,8 @@ class TblCategoryCrudController extends CrudController
 
         // ------ CRUD FIELDS
         $this->crud->addField([
-            'name' => 'cat_des_en',
-            'label' => 'cat_des_en',
+            'name' => 'title',
+            'label' => 'title',
             'type' => 'text',
             'wrapperAttributes' => [
                 'class' => 'form-group col-md-6'
@@ -42,17 +42,7 @@ class TblCategoryCrudController extends CrudController
                 'class' => 'form-control'
             ],
         ]);
-        $this->crud->addField([
-            'name' => 'cat_des_kh',
-            'label' => 'cat_des_kh',
-            'type' => 'text',
-            'wrapperAttributes' => [
-                'class' => 'form-group col-md-6'
-            ],
-            'attributes' => [
-                'class' => 'form-control'
-            ],
-        ]);
+
         $this->crud->addField([ // image
             'label' => "image",
             'name' => "image",
@@ -96,13 +86,10 @@ class TblCategoryCrudController extends CrudController
 
         // ------ CRUD COLUMNS
         $this->crud->addColumn([
-            'name' => 'cat_des_en',
-            'label' => 'cat_des_en',
+            'name' => 'title',
+            'label' => 'title',
         ]);
-        $this->crud->addColumn([
-            'name' => 'cat_des_kh',
-            'label' => 'cat_des_kh',
-        ]);
+
         $this->crud->addColumn([
             'name' => 'image',
             'label' => 'image',

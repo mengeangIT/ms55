@@ -36,7 +36,7 @@ class TblProductCrudController extends CrudController
             'label' => _t('pro_cate',$lang_file),
             'type' => 'select',
             'entity' => 'category',
-            'attribute' => 'cat_des_en',
+            'attribute' => 'title',
             'model' => "App\Models\TblCategory",
             'wrapperAttributes' => [
                 'class' => 'form-group col-md-6'
@@ -50,7 +50,7 @@ class TblProductCrudController extends CrudController
             'label' => _t('pro_type',$lang_file),
             'type' => 'select',
             'entity' => 'type',
-            'attribute' => 't_des_en',
+            'attribute' => 'title',
             'model' => "App\Models\TblType",
             'wrapperAttributes' => [
                 'class' => 'form-group col-md-6'
@@ -71,8 +71,8 @@ class TblProductCrudController extends CrudController
             ],
         ]);
         $this->crud->addField([
-                'name' => 'pro_des_en',
-                'label' => _t('pro_des_en',$lang_file),
+                'name' => 'title',
+                'label' => _t('title',$lang_file),
                 'type' => 'text',
                 'wrapperAttributes' => [
                     'class' => 'form-group col-md-6'
@@ -80,17 +80,6 @@ class TblProductCrudController extends CrudController
                 'attributes' => [
                     'class' => 'form-control'
                 ],
-        ]);
-        $this->crud->addField([
-            'name' => 'pro_des_kh',
-            'label' => _t('pro_des_kh',$lang_file),
-            'type' => 'text',
-            'wrapperAttributes' => [
-                'class' => 'form-group col-md-6'
-            ],
-            'attributes' => [
-                'class' => 'form-control'
-            ],
         ]);
         $this->crud->addField([
             'name' => 'qty',
@@ -188,7 +177,7 @@ class TblProductCrudController extends CrudController
             'type' => 'select',
             'name' => 'pro_cate',
             'entity' => 'category',
-            'attribute' => 'cat_des_en',
+            'attribute' => 'title',
             'model' => "App\Models\TblCategory",
         ]);
 
@@ -197,7 +186,7 @@ class TblProductCrudController extends CrudController
             'type' => 'select',
             'name' => 'pro_type',
             'entity' => 'type',
-            'attribute' => 't_des_en',
+            'attribute' => 'title',
             'model' => "App\Models\TblType",
         ]);
 
@@ -206,13 +195,10 @@ class TblProductCrudController extends CrudController
             'label' => _t('pro_code',$lang_file),
         ]);
         $this->crud->addColumn([
-            'name' => 'pro_des_en',
-            'label' => _t('pro_des_en',$lang_file),
+            'name' => 'title',
+            'label' => _t('title',$lang_file),
         ]);
-        $this->crud->addColumn([
-            'name' => 'pro_des_kh',
-            'label' => _t('pro_des_kh',$lang_file),
-        ]);
+
         $this->crud->addColumn([
             'name' => 'qty',
             'label' => _t('qty',$lang_file),

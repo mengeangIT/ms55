@@ -9,7 +9,7 @@
             <img src="{{ url('img/cache/img300x300/'.\App\Helpers\ITPC::get_basename($itemCategory->image)) }}"
                  alt="{{ $itemCategory->title }}" class="img-responsive img-center">
 
-                <p class="m-t">{{$itemCategory->cat_des_en}}</p>
+                <p class="m-t">{{$itemCategory->title}}</p>
 
             <i class="fa fa-play"></i>
         </a>

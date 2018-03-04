@@ -18,8 +18,7 @@ class CreateTblProductsTable extends Migration
             $table->integer('pro_cate')->nullable()->index();
             $table->integer('pro_type')->nullable()->index();
             $table->string('pro_code')->index()->nullable();
-            $table->string('pro_des_en')->index()->nullable();
-            $table->string('pro_des_kh')->index();
+            $table->string('title')->index()->nullable();
             $table->text('image')->nullable();
             $table->double('qty')->nullable()->default(0);
             $table->double('price')->nullable()->default(0);

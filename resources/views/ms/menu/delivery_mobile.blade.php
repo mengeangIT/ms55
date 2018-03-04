@@ -95,7 +95,7 @@
                                 <div class="div-product-img">
                                     <img class="product-img" src="{{ url('img/cache/img300x300/'.\App\Helpers\ITPC::get_basename($item->image)) }}" alt=" ">
                                 </div>
-                                <p class="m-a-0 kcal-detail">{{$item->pro_des_en}}</p>
+                                <p class="m-a-0 kcal-detail">{{$item->title}}</p>
 
                                 <hr>
                                 <p class="m-a-0">
@@ -138,7 +138,7 @@
                                     <div class="div-product-img">
                                         <img class="product-img" src="{{ url('img/cache/img300x300/'.\App\Helpers\ITPC::get_basename(($item->image)) }}" alt="">
                                     </div>
-                                    <p class="m-a-0 kcal-detail">{{$item->pro_des_en}}</p>
+                                    <p class="m-a-0 kcal-detail">{{$item->title}}</p>
                                     <hr>
                                     <p class="m-a-0">
                                         <span class="pull-left">{{$item->kalory}} kcal.</span>

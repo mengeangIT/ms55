@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
+use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
 
 class TblCardCategory extends Model
 {
     use CrudTrait;
-
+    use HasTranslations;
     /*
     |--------------------------------------------------------------------------
     | GLOBAL VARIABLES
@@ -19,10 +20,10 @@ class TblCardCategory extends Model
      protected $primaryKey = 'id';
      public $timestamps = true;
     // protected $guarded = ['id'];
-    protected $fillable = ['card_cat_des_en','card_cat_des_kh','in_putter','status'];
+    protected $fillable = ['title','in_putter','status'];
     // protected $hidden = [];
     // protected $dates = [];
-
+    protected $translatable = ['title'];
     /*
     |--------------------------------------------------------------------------
     | FUNCTIONS

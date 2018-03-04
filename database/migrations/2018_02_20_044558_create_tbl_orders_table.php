@@ -15,7 +15,17 @@ class CreateTblOrdersTable extends Migration
     {
         Schema::create('tbl_orders', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('cust_id')->nullable()->index();
+            $table->double('total_qty')->nullable()->default(0);
+            $table->double('total_amt')->nullable()->default(0);
+            $table->double('total_tax')->nullable()->default(0);
+            $table->double('total_dis')->nullable()->default(0);
+            $table->double('total_payable')->nullable()->default(0);
+            $table->date('date')->nullable();
+            $table->time('time')->nullable();
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

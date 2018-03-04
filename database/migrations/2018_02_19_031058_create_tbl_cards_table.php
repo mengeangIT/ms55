@@ -16,8 +16,7 @@ class CreateTblCardsTable extends Migration
         Schema::create('tbl_cards', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('card_cate')->nullable()->index();
-            $table->string('card_des_en')->index()->nullable();
-            $table->string('card_des_kh')->index();
+            $table->string('title')->index()->nullable();
             $table->text('image')->nullable();
             $table->text('content')->nullable();
             $table->string('in_putter')->nullable();

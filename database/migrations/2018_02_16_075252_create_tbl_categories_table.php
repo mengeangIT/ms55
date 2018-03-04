@@ -15,8 +15,7 @@ class CreateTblCategoriesTable extends Migration
     {
         Schema::create('tbl_categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('cat_des_en')->nullable()->index();
-            $table->string('cat_des_kh')->nullable();
+            $table->string('title')->nullable()->index();
             $table->text('image')->nullable();
             $table->string('in_putter')->nullable();
             $table->enum('status', ['ACTIVE', 'INACTIVE'])->default('ACTIVE');

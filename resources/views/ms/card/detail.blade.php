@@ -1,3 +1,6 @@
+<?php
+$lang_file = 'ms_card';
+?>
 @extends('ms.layout.front')
 @section('title', 'CardDetailPage')
 @section('url'){{url('/card-detail')}}@endsection
@@ -15,14 +18,14 @@
                         <div class="col-xs-12">
                             <div class="breadcrumbList">
                                 <ul class="breadcrumb">
-                                    <li><a href="{{url('/')}}">{{_t('Home')}}</a></li>
-                                    <li class="active">{{_t('MK Card')}}</li><li class="active">{{_t('MK Standard VIP Card')}}</li>
+                                    <li><a href="{{url('/')}}">{{_t('home',$lang_file)}}</a></li>
+                                    <li class="active">{{_t('ms_card',$lang_file)}}</li><li class="active">{{$card->title}}</li>
                                 </ul>
                             </div>
                             <div class="titleText">
                                 <div class="textHeaderNoImg">
                                     <div class="linegray">
-                                        <h2>{{_t('MK Card')}}</h2>
+                                        <h2>{{_t('ms_card',$lang_file)}}</h2>
                                     </div>
                                     <div class="redbox"></div>
                                 </div>
@@ -30,12 +33,12 @@
                         </div>
                     </div>
                     <div class="row hidden-lg-up">
-                        <h1 class="textHeaderMobile"> {{_t('MK Card')}}</h1>
+                        <h1 class="textHeaderMobile"> {{_t('ms_card',$lang_file)}}</h1>
                     </div>
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="textTitle text-center hidden-xs-down">
-                                <h5><strong><span class="fontred ">{{_t('Privileg')}}e</span> {{_t('to make you happier than ever')}}.</strong></h5>
+                                <h5><strong><span class="fontred ">{{_t('privilege',$lang_file)}}e</span> {{_t('to make you happier than ever')}}.</strong></h5>
                             </div>
                             <div class="mkcardBox">
                                 <div class="tabbable">

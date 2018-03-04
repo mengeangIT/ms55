@@ -16,7 +16,7 @@ class CreateTblPostjobsTable extends Migration
         Schema::create('tbl_postjobs', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('position_id')->nullable()->index();
-            $table->date('post_date')->nullable();
+            $table->date('date')->nullable();
             $table->text('content')->nullable();
             $table->string('in_putter')->nullable();
             $table->enum('status', ['ACTIVE', 'INACTIVE'])->default('ACTIVE');

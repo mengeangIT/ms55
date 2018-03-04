@@ -13,3 +13,11 @@ CRUD::resource('tblcard', 'TblCardCrudController');
 
 CRUD::resource('admin-user', 'AdminUserCrudController');
 CRUD::resource('tblpromotion', 'TblPromotionCrudController');
+
+CRUD::resource('customer', 'CustomerCrudController');
+Route::any('customer/change-pass','CustomerCrudController@changePass');
+Route::patch('customer/change-pass','CustomerCrudController@changePassSave');
+Route::get('ajax-customer-phone', 'CustomerCrudController@getPhones');
+Route::get('ajax-customer-name', 'CustomerCrudController@getName');
+Route::get('api/customer', 'CustomerCrudController@index2');
+Route::get('api/customer/{id}', 'CustomerCrudController@show2');

@@ -15,8 +15,7 @@ class CreateTblCardCategoriesTable extends Migration
     {
         Schema::create('tbl_card_categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('card_cat_des_en')->nullable()->index();
-            $table->string('card_cat_des_kh')->nullable();
+            $table->string('title')->nullable()->index();
             $table->string('in_putter')->nullable();
             $table->enum('status', ['ACTIVE', 'INACTIVE'])->default('ACTIVE');
             $table->timestamps();
